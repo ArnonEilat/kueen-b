@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "name": "kueenb",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShirAmit96/kueen-b.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShirAmit96/kueen-b/issues"
+  },
+  "homepage": "https://github.com/ShirAmit96/kueen-b#readme"
+}
