@@ -1,0 +1,22 @@
+{
+  "name": "kueen-b",
+  "version": "1.0.0",
+  "description": "1. make sure you have node installed.\r 2. enter the backend's folder from the terminal(cd).\r 3. install express:`npm install express --save`\r 4. run the app :`node app.js`\r 5. After running the command, load http://localhost:3000/ in a browser to see the output. You should also see “Example app listening on port 3000!” get logged to the command line.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnonEilat/kueen-b.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArnonEilat/kueen-b/issues"
+  },
+  "homepage": "https://github.com/ArnonEilat/kueen-b#readme",
+  "dependencies": {
+    "react-router-dom": "^6.2.2"
+  }
+}
