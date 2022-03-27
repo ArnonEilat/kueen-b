@@ -1,5 +1,5 @@
 # Kueen B 
-
+the branch by noa schwartz
 ## how to run a backend project:
 1. make sure you have node installed.
 2. enter the backend's folder from the terminal(cd).
