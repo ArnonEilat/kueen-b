@@ -7,3 +7,7 @@
 4. run the app :`node app.js`
 5. After running the command, load http://localhost:3000/ in a browser to see the output. You should also see “Example app listening on port 3000!” get logged to the command line.
 
+## How to run the Docker:
+1. go to the backend folder .
+2. open the windows terminal. 
+3. write the command : docker compose up.
