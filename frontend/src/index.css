@@ -24,7 +24,7 @@ div{
   border:none;
   border-bottom: 1.4px solid darkgray;
   font-size: 12px;
-  text-color: lightgray;
+ 
   
 }
 .e-input:focus {
@@ -40,6 +40,16 @@ div{
   box-shadow: 0px 2px 5px gray;
   border-radius:3px;
   
+}
+#registerButton:active{
+  background-color:#cde4fd;
+  box-shadow:none;
+}
+#registerButton:focus{
+  background-color:white;
+}
+#registerButton:hover{
+  background-color:#cde4fd;
 }
 .imgButton{
   outline:none;
