@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import K_Health_logo from "../src/logoK.svg";
-import img_button from "../src/calanderIcon.svg";
+import img_button from "./calanderIcon.svg";
 
 function App() {
   const [name, setName] = React.useState("");
