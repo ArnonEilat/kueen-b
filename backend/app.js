@@ -9,13 +9,10 @@ app.listen(port, () => {
   console.log('Example app listening on port '+ port );
 });
 
-// app.get("/api", (req, res) => {
-//   res.json({ message: "Hello from server!" });
-// });
-
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
+
 app.get('/express_backend', (req, res) => { 
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
 });
