@@ -5,6 +5,62 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+div{
+  margin: auto;
+  text-align: center;
+}
+.logo{
+  width: 100px;
+  height: 100px;
+}
+.head{
+  color: #1E90FF;
+  font-size:15px;
+  font-weight:bold;
+}
+.e-input {
+  border:none;
+  border-bottom: 1.4px solid darkgray;
+  font-size: 12px;
+ 
+  
+}
+.e-input:focus {
+  border:none;
+  border-bottom: 1.5px solid lightgray;
+  outline:none;
+}
+#registerButton{
+  background-color:white;
+  border:none;
+  width: 115px;
+  height: 115px;
+  box-shadow: 0px 2px 5px gray;
+  border-radius:3px;
+  
+}
+#registerButton:active{
+  background-color:#cde4fd;
+  box-shadow:none;
+}
+#registerButton:focus{
+  background-color:white;
+}
+#registerButton:hover{
+  background-color:#cde4fd;
+}
+.imgButton{
+  outline:none;
+  width: 35px;
+  height: 35px;
+  
+}
+#textButton{
+  color:rgb(61, 61, 61);
+  font-size:11px;
+  font-weight:bold;
 }
 
 code {
