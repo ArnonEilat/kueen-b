@@ -6,3 +6,12 @@ app.get('/', function (req, res) {
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
 });
+
+app.get('/validation', (req, res) => {
+  if (email.includes('@') && email.includes('.com')) {
+    res.send('Log in successful!');
+  } else {
+    res.send('Invalid Email. Please try again.')
+  };
+
+});
