@@ -11,3 +11,4 @@ const getData = async () => {
     throw e;
   }
 };
+export default getData;
