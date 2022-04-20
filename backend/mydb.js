@@ -20,15 +20,14 @@ if (!err) {
     console.log("datesmodel ", DatesModel);
 
     //this is an exmple of a single insertion to the collection we have now created
-    const newuser = new UsersModel({
-        // QUESTION TO ARNON 
-        name: "fakeuser",
-        mail: "fakemail"
-    })
-    newuser.save();
+    // const newuser = new UsersModel({
+    //     name: "fakeuser",
+    //     mail: "fakemail"
+    // })
+    //  newuser.save(); 
     //this is an exmple of 6 insertions to the collection we have now inserted
-    insertDocuments(UsersModel);
-    console.log("fakeuser ", newuser); // see the object that is the user we have inserted
+    //insertDocuments(UsersModel);
+    //console.log("fakeuser ", newuser); // see the object that is the user we have inserted
 
     console.log('Successfully Connected in MongoDB') }
 else { 
