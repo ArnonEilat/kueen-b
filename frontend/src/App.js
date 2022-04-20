@@ -1,33 +1,22 @@
-<<<<<<< HEAD
+import "./index.css";
+import K_Health_logo from "./logoK.svg";
+import img_button from "./calanderIcon.svg";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import getData from "./APIcall";
 
 
 function App() {
-  
-  const [data,setData] = useState(null) 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [data, setData] = useState(null)
   
   useEffect(() => {
     // Call our fetch function below once the component mounts
     getData()
       .then(res => setData(res.express))
-      .catch(err => console.log(err)); 
+      .catch(err => console.log(err));
   }, []);
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>{data}</p>
-      </header>
-=======
-{/* import "./index.css";
-import K_Health_logo from "./logoK.svg";
-import img_button from "./calanderIcon.svg";
-
-function App() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
 
   return (
     <div className="App">
@@ -61,13 +50,16 @@ function App() {
         <p id="textButton">
           Register to a day<br></br> in the office
         </p>
-      </button> */}
->>>>>>> main
+      </button>
+      <p>{data}</p>
     </div>
   );
 }
 
-export default App;
+export default App; 
+
+
+
 
 
 
