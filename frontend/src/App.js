@@ -1,11 +1,19 @@
 import React from "react";
 import "./index.css";
+import "./RegisterByDate.js";
 import K_Health_logo from "./logoK.svg";
 import img_button from "./calanderIcon.svg";
+import "./components/Navbar.js";
+import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 function App() {
+  
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
+
+  
 
   return (
     <div className="App">
@@ -40,7 +48,8 @@ function App() {
           Register to a day<br></br> in the office
         </p>
       </button>
-    </div>
+ </div>
+    
   );
 }
 
