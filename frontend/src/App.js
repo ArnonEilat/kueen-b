@@ -1,22 +1,20 @@
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import K_Health_logo from "./logoK.svg";
 import img_button from "./calanderIcon.svg";
-import React, { useEffect, useState } from "react";
 import "./App.css";
 import getData from "./APIcall";
-
 
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [data, setData] = useState(null)
-  
-  useEffect(() => {
-    // Call our fetch function below once the component mounts
-    getData('/express_backend')
-      .then(res => setData(res.express))
-      .catch(err => console.log(err));
-  }, []);
+  const [data, setData] = useState(null);
+
+  const regBtn = (email) => {
+    const mailData = getData(`/validation?email=${email}`)
+    .then(res => setData(res.line))
+    .catch(err => console.log(err));
+  } 
 
   return (
     <div className="App">
@@ -40,10 +38,7 @@ function App() {
       <br></br>
       <br></br>
       <br></br>
-      <button
-        onClick={() => console.log(name + " " + email)}
-        id="registerButton"
-      >
+      <button onClick={() => regBtn(email)} id="registerButton">
         {" "}
         <img src={img_button} className="imgButton" />
         <br></br>
@@ -56,4 +51,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
