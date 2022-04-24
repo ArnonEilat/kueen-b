@@ -13,7 +13,7 @@ function App() {
   
   useEffect(() => {
     // Call our fetch function below once the component mounts
-    getData()
+    getData('/express_backend')
       .then(res => setData(res.express))
       .catch(err => console.log(err));
   }, []);
