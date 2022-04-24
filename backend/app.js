@@ -1,12 +1,16 @@
 const express = require('express');
+// Creating the node app
 const app = express();
+// Port Environment variable
 const port = process.env.PORT || 5000;
+
+// Firing up the app on selected port
+app.listen(port, () => {
+  console.log('Example app listening on port '+ port );
+});
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
-});
-app.listen(port, () => {
-  console.log('Example app listening on port 5000!');
 });
 
 app.get('/validation', (req, res) => {
@@ -15,13 +19,12 @@ app.get('/validation', (req, res) => {
   console.log('emailll: ' + email);
   if (email.includes('@') && email.includes('.com')) {
     console.log('great')
-    res.send({express:'Log in successful!'});
+    res.send({line:'Log in successful!'});
   } else {
-    res.send({express:'Invalid Email. Please try again.'})
+    res.send({line:'Invalid Email. Please try again.'})
   };
 
 });
-
 
 app.on("error", error => {
   throw new Error(`[app]::ERROR:${error.message}`);
