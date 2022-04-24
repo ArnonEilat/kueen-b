@@ -7,13 +7,10 @@ import "./components/Navbar.js";
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-
 function App() {
   
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
-
-  
 
   return (
     <div className="App">
