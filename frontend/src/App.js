@@ -1,11 +1,22 @@
-import React from "react";
 import "./index.css";
 import K_Health_logo from "./logoK.svg";
 import img_button from "./calanderIcon.svg";
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import getData from "./APIcall";
+
 
 function App() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [data, setData] = useState(null)
+  
+  useEffect(() => {
+    // Call our fetch function below once the component mounts
+    getData('/express_backend')
+      .then(res => setData(res.express))
+      .catch(err => console.log(err));
+  }, []);
 
   return (
     <div className="App">
@@ -40,8 +51,9 @@ function App() {
           Register to a day<br></br> in the office
         </p>
       </button>
+      <p>{data}</p>
     </div>
   );
 }
 
-export default App;
+export default App; 
