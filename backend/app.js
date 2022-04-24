@@ -4,6 +4,11 @@ const app = express();
 // Port Environment variable
 const port = process.env.PORT || 5000;
 
+function emailRegex(input) {
+  let regex = /[a-zA-Z]+@khealth\.com/i;
+  return regex.test(input);
+}
+
 // Firing up the app on selected port
 app.listen(port, () => {
   console.log('Example app listening on port '+ port );
@@ -17,9 +22,9 @@ app.get('/validation', (req, res) => {
   console.log(req.query)
   let email = req.query.email;
   console.log('emailll: ' + email);
-  if (email.includes('@') && email.includes('.com')) {
+  if (emailRegex(email)) {
     console.log('great')
-    res.send({line:'Log in successful!'});
+    res.send({line:'Logged in successfully!'});
   } else {
     res.send({line:'Invalid Email. Please try again.'})
   };
