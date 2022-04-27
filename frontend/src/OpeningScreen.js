@@ -1,5 +1,6 @@
 import React from "react";
 import RegisterByDate from "./Pages/RegisterByDate.js";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import K_Health_logo from "./logoK.svg";
 import img_button from "./calanderIcon.svg";
@@ -7,13 +8,20 @@ import { NavLink, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 
+
  
  
  function OpeningScreen(){
 
- const [name, setName] = React.useState("");
-const [email, setEmail] = React.useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [data, setData] = useState(null);
 
+  const regBtn = (email) => {
+    const mailData = getData(`/validation?email=${email}`)
+    .then(res => setData(res.line))
+    .catch(err => console.log(err));
+  } 
 
   return (
   <div className="OpeningScreen">
@@ -39,9 +47,8 @@ const [email, setEmail] = React.useState("");
       <br></br>
      <Link to="/RegisterByDate">
       <button
-        onClick={() => console.log(name + " " + email)}
-        id="registerButton"
-      >
+        onClick={regBtn(email)}
+        id="registerButton" >
         {" "}
         <img src={img_button} className="imgButton" />
         <br></br>
@@ -50,6 +57,7 @@ const [email, setEmail] = React.useState("");
         </p>
       </button>
      </Link>
+     <p>{data}</p>
  </div>
 );
 }
