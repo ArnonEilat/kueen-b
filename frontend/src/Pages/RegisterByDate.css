@@ -1,0 +1,79 @@
+
+.RegisterByDate{
+    /* max-width: 500px;
+    margin: auto;
+    font-family: arial;
+    font-size: 24px;
+    margin: 25px;
+    width: 350px;
+    height: 200px;
+    display: flex;
+    justify-content: center; */
+  
+}
+.upperArea{ 
+      
+position: absolute;
+width: 375px;
+height: 83px;
+left:50%;
+top: 0px;
+
+/* Backgrounds / Not Chat */
+
+background: #FFFFFF;
+/* Header shadow */
+
+box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.12);
+}
+.headline{
+    /* Title */
+position: absolute;
+width: 255px;
+height: 58px;
+left: 60px;
+top: 26px;
+
+font-family: 'Arial';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+
+text-align: center;
+
+/* Text / General */
+
+color: #00406B;
+}
+.Arrow{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: calc(20px);
+    top: calc(50% - 16px/2 + 0.5px);
+}
+      
+ .howManyArea{
+    /* Rectangle 2 */
+position:fixed;
+width:280px;
+height:124px;
+left: 50%;
+top: 350px;
+text-align: center;
+
+
+/* Gray 6 */
+background: #F2F2F2;
+border-radius: 4px;
+ }
+ .lowerArea{
+position: absolute;
+width: 349px;
+height: 124px;
+left: 15px;
+top: 387px;
+ }
+
