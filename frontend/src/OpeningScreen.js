@@ -3,11 +3,10 @@ import RegisterByDate from "./Pages/RegisterByDate.js";
 import "./index.css";
 import K_Health_logo from "./logoK.svg";
 import img_button from "./calanderIcon.svg";
-import "./components/Navbar.js";
 import { NavLink, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
-import Navbar from "./components/Navbar.js";
+
  
  
  function OpeningScreen(){
