@@ -1,4 +1,3 @@
-import React from "react";
 import RegisterByDate from "./Pages/RegisterByDate.js";
 import React, { useEffect, useState } from "react";
 import "./index.css";
@@ -7,7 +6,7 @@ import img_button from "./calanderIcon.svg";
 import { NavLink, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
-
+import getData from "./APIcall";
 
  
  
