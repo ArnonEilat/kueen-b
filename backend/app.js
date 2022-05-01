@@ -31,6 +31,19 @@ app.get('/validation', (req, res) => {
 
 });
 
+
+app.post('/assignToDate',(req,res) => {
+  let user=req.query.user;//  change name to user id 
+  let date= req.query.date;
+//  const newDate= new DatesModel({
+//    user:user, Date:date})
+//    newDate.save();
+   //insertDocuments(DatesModel);
+   res.send({line:'successfully!'+user+ date});
+   //this function should be in DB and we shall call it from here
+
+});
+
 app.on("error", error => {
   throw new Error(`[app]::ERROR:${error.message}`);
 });
