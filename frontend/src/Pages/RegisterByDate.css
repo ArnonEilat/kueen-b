@@ -35,7 +35,6 @@
   display: flex;
   align-self: flex-start;
 }
-
 .howManyArea {
   display: flex;
   flex-direction: column;
@@ -57,29 +56,10 @@
   flex-direction: column;
   align-self: end;
   justify-content: flex-end;
+}
 
-  /* Gray 6 */
-  background: #f2f2f2;
-  border-radius: 4px;
-}
-.lowerArea {
-  position: absolute;
-  width: 349px;
-  height: 124px;
-  /* left: 15px; */
-  top: 387px;
-  align-self: center;
-  align-items: center;
-}
 .attendance {
   /* See who registered */
-
-  position: absolute;
-  width: 153px;
-  height: 22px;
-  left: 36px;
-  top: 80px;
-
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
@@ -87,30 +67,6 @@
   line-height: 120%;
   display: flex;
   align-self: flex-end;
-
-  /* identical to box height, or 22px */
-
-  color: #2b8fff;
-}
-.continue {
-  position: static;
-  width: 94px;
-  top: 9px;
-  bottom: 9px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 120%;
-  /* identical to box height, or 22px */
-  display: flex;
-  align-items: center;
-  text-align: center;
-  /* Text/Over Action */
-
-  color: #ffffff;
-  /* Inside auto layout */
-
   color: #2b8fff;
 }
 .continue {
@@ -120,20 +76,16 @@
   order: 0;
   flex-grow: 0;
   margin: 0px 10px;
-  font-family: "Roboto";
+  font-family: "Arial";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 9px 30px;
-
   background: #2b8fff;
-  /* button shadow */
-
   box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
   border-radius: 20px;
 }
