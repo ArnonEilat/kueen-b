@@ -10,7 +10,3 @@ services:
       MONGO_INITDB_ROOT_USERNAME: Kueens-b
       MONGO_INITDB_ROOT_PASSWORD: Kueens111
       MONGO_INITDB_DATABASE: Attendancedb
-    
-
-
-      
