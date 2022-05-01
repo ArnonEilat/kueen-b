@@ -3,9 +3,6 @@ import "./RegisterByDate.css";
 import Arrow from "./Arrow.svg";
 import { render } from "@testing-library/react";
 import { Link } from 'react-router-dom';
-// function goBack() {
-//  <link to="/.App.js"></link>;
-// }
 
 function RegisterByDate () {
   const registerToDate = () => {
