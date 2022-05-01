@@ -1,21 +1,17 @@
 .RegisterByDate {
-  align-self: center;
-  justify-content: center;
-  justify-content: flex-start;
-  align-items: center;
   display: flex;
-  -ms-flex-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .upperArea {
-  display: flexbox;
-  position: absolute;
-  width: 375px;
-  height: 83px;
-  top: 0px;
-  align-self: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  position: absolute;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  padding: 5%;
   /* Backgrounds / Not Chat */
 
   background: #ffffff;
@@ -25,117 +21,71 @@
 }
 .headline {
   /* Title */
-  position: absolute;
-  width: 255px;
-  height: 58px;
-  top: 26px;
-
+  display: flex;
+  align-self: baseline;
   font-family: "Arial";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
-  align-items: center;
-  align-self: center;
-
-  text-align: center;
-
-  /* Text / General */
-
+  margin-right: 33%;
   color: #00406b;
 }
 .Arrow {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: calc(20px);
-  top: calc(50% - 16px / 2 + 0.5px);
+  display: flex;
+  align-self: flex-start;
 }
-
 .howManyArea {
-  /* Rectangle 2 */
-  position: absolute;
-  width: 280px;
-  height: 124px;
-  top: 350px;
-  align-self: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin: 5%;
+  padding: 30%;
+  padding-bottom: 10%;
 
   /* Gray 6 */
   background: #f2f2f2;
   border-radius: 4px;
 }
-.lowerArea {
-  position: absolute;
-  width: 349px;
-  height: 124px;
-  /* left: 15px; */
-  top: 387px;
-  align-self: center;
-  align-items: center;
+.calander {
+  display: flex;
+  margin: 40%;
 }
+.lowerArea {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  justify-content: flex-end;
+}
+
 .attendance {
   /* See who registered */
-
-  position: absolute;
-  width: 153px;
-  height: 22px;
-  left: 36px;
-  top: 80px;
-
-  font-family: "Roboto";
+  font-family: "Arial";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 120%;
-  /* identical to box height, or 22px */
-
-  /* Backgrounds / Chat */
-
+  display: flex;
+  align-self: flex-end;
   color: #2b8fff;
 }
 .continue {
-  position: static;
-  width: 94px;
-  top: 9px;
-  bottom: 9px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 120%;
-  /* identical to box height, or 22px */
   display: flex;
-  align-items: center;
-  text-align: center;
-  /* Text/Over Action */
-
-  color: #ffffff;
-  /* Inside auto layout */
-
+  align-self: flex-end;
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0px 10px;
-  /* Auto layout */
-
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 9px 30px;
-
-  position: absolute;
-  width: 155px;
-  height: 40px;
-  left: calc(50% - 155px / 2 - 3px);
-  top: 120px;
-
-  /* General / Action */
-
   background: #2b8fff;
-  /* button shadow */
-
   box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
   border-radius: 20px;
 }

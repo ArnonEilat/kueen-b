@@ -1,12 +1,12 @@
-import RegisterByDate from "./Pages/RegisterByDate.js";
+import RegisterByDate from "./RegisterByDate.js";
 import React, { useEffect, useState } from "react";
-import "./index.css";
-import K_Health_logo from "./logoK.svg";
-import img_button from "./calanderIcon.svg";
+import "./OpeningScreen.css";
+import K_Health_logo from "../Icons/logoK.svg";
+import img_button from "../Icons/calanderIcon.svg";
 import { NavLink, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
-import getData from "./APIcall";
+import getData from "../APIcall";
 
  
  
@@ -20,7 +20,10 @@ import getData from "./APIcall";
     const mailData = getData(`/validation?email=${email}`)
     .then(res => setData(res.line))
     .catch(err => console.log(err));
+
   } 
+
+  
 
   return (
   <div className="OpeningScreen">
