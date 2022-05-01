@@ -6,10 +6,8 @@ import postData from "../APIpost";
 
 function RegisterByDate() {
   //send id from the opening screen
-let date="18/4/22";
-let user="Shir";
 const setDate = () => {
-    postData("/assignToDate", { user,date })
+    postData("/assignToDate", { user:"shir",date:"18/4/22" })
       .then((data) => {
         console.log(data); // JSON data parsed by `data.json()` call
       })
