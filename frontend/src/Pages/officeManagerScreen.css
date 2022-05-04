@@ -1,0 +1,27 @@
+.officeManagerScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+
+
+.myCal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    position: absolute;
+    width: 42px;
+    height: 43px;
+    left: 25px;
+    top: 215px;
+
+    /* Gray 4 */
+
+    border: 2px solid #BDBDBD;
+    border-radius: 111px;
+}
