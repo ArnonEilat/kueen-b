@@ -42,33 +42,27 @@ function OpeningScreen() {
     <div className="OpeningScreen">
       <img src={K_Health_logo} className="logo" />
       <p className="head">Office registration form</p>
-      <br></br>
+      <div className="loginArea">
       <input
         onChange={(n) => setName(n.target.value)}
-        className="e-input"
+        className="nameInput"
         type="text"
         placeholder="Your Name"
       />
-      <br></br>
-      <br></br>
       <input
         onChange={(e) => setEmail(e.target.value)}
-        className="e-input"
+        className="emailInput"
         type="email"
         placeholder="Email"
       />
-      <br></br>
-      <br></br>
-      <br></br>
-      <button onClick={regBtn} id="registerButton">
+      <button onClick={regBtn} className="registerButton">
         {" "}
         <img src={img_button} className="imgButton" />
-        <br></br>
-        <p id="textButton">
+        <p className="textButton">
           Register to a day<br></br> in the office
         </p>
       </button>
-      <p>{data}</p>
+      </div> <p className="error">{data}</p>
     </div>
   );
 }

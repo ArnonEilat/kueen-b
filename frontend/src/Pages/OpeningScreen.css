@@ -1,70 +1,94 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.OpeningScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Arial";
+  text-align: center;
+}
+.logo {
+  margin-top:10%;
+  display: flex;
+  width: 35vw;
+  height: 35vw;
+}
+.head {
+  margin:15%;
+  display: flex;
+  color: #1e90ff;
+  font-size: 6vw;
+  font-weight: bold;
+}
+.loginArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nameInput {
+  margin-top:25%;
+  display: flex;
+  border: none;
+  border-bottom: 0.6vw solid darkgray;
+  font-size: 4vw;
+}
+.emailInput {
+  margin-top:35%;
   
-  }
-  div{
-    margin: auto;
-    text-align: center;
-  }
-  .logo{
-    width: 100px;
-    height: 100px;
-  }
-  .head{
-    color: #1E90FF;
-    font-size:15px;
-    font-weight:bold;
-  }
-  .e-input {
-    border:none;
-    border-bottom: 1.4px solid darkgray;
-    font-size: 12px;
-   
-    
-  }
-  .e-input:focus {
-    border:none;
-    border-bottom: 1.5px solid lightgray;
-    outline:none;
-  }
-  #registerButton{
-    background-color:white;
-    border:none;
-    width: 115px;
-    height: 115px;
-    box-shadow: 0px 2px 5px gray;
-    border-radius:3px;
-    
-  }
-  #registerButton:active{
-    background-color:#cde4fd;
-    box-shadow:none;
-  }
-  #registerButton:focus{
-    background-color:white;
-  }
-  #registerButton:hover{
-    background-color:#cde4fd;
-  }
-  .imgButton{
-    outline:none;
-    width: 35px;
-    height: 35px;
-    
-  }
-  #textButton{
-    color:rgb(61, 61, 61);
-    font-size:11px;
-    font-weight:bold;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
+  display: flex;
+  border: none;
+  border-bottom: 0.6vw solid darkgray;
+  font-size: 4vw;
+}
+.nameInput:focus {
+  border: none;
+  border-bottom: 0.6vw solid darkgray;
+  outline: none;
+}
+.emailInput:focus {
+  border: none;
+  border-bottom: 0.6vw solid darkgray;
+  outline: none;
+}
+.registerButton {
+  margin-top:48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: none;
+  width: 45vw;
+  height: 45vw;
+  box-shadow: 0px 0.8vw 1.5vw gray;
+  border-radius: 1.5vw;
+}
+.registerButton:active {
+  background-color: #cde4fd;
+  box-shadow: none;
+}
+.registerButton:focus {
+  background-color: white;
+}
+.registerButton:hover {
+  background-color: #cde4fd;
+}
+.imgButton {
+  display: flex;
+  align-self:center;
+  outline: none;
+  width:15vw;
+  height: 15vw;
+  margin-top:15%;
+}
+.textButton {
+  display: flex;
+  color: rgb(61, 61, 61);
+  font-size: 4.5vw;
+  font-weight: bold;
+  margin-top:20%;
+}
+.error{
+  display: flex;
+  font-weight: bold;
+  color:red;
+  margin-top:10%;
+}
