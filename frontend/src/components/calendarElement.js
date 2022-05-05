@@ -19,8 +19,8 @@ function MyCalendar() {
           />
         </div>
         <p className='text center'>
-            <span className='bold'>Selected Date:</span>{' '}
-            {date.toDateString()}
+            <span className='bold'>Selected Date:</span>
+            {' ' + date.toDateString()}
         </p>
         <br></br>
       </div>
