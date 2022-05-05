@@ -3,13 +3,20 @@ import "./RegisterByDate.css";
 import Arrow from "../Icons/Arrow.svg";
 import { Link } from "react-router-dom";
 import postData from "../APIpost";
+import {useSelector} from "react-redux";
+import {selectUser} from "../redux/userSlice.js"
+
 
 function RegisterByDate() {
-  //send id from the opening screen
+  //import user's info from redux:
+const user= useSelector(selectUser);
 const setDate = () => {
+  //import user's id from redux.
+  //get date from clander component
+  //
     postData("/assignToDate", { user:"shir",date:"18/4/22" })
       .then((data) => {
-        console.log(data); // JSON data parsed by `data.json()` call
+        console.log(data);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -24,7 +31,7 @@ const setDate = () => {
         <Link to="/OpeningScreen">
           <img src={Arrow} className="Arrow" />
         </Link>
-        <h1 className="headline">When are you coming?</h1>
+        <h1 className="headline">Hi {user.name}, when are you coming?</h1>
       </div>
       <div className="calander"></div>
       <div className="howManyArea">

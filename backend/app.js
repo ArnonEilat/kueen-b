@@ -24,8 +24,9 @@ app.get("/validation", (req, res) => {
   console.log("emailll: " + email);
   if (emailRegex(email)) {
     console.log("great");
-    res.send({ line: "Logged in successfully!" });
+    res.send({ line: "Ok" });
   } else {
+    res.status(400);
     res.send({ line: "Invalid Email. Please try again." });
   }
 });
