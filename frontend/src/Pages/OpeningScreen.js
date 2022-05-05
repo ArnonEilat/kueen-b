@@ -12,7 +12,7 @@ function OpeningScreen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [data, setData] = useState(null);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (data==="Ok") {
