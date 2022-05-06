@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 const assert = require('assert');
 
-//import users
-const users = require('./user');
+const users = require('./models/user');
+const dates = require('./models/date');
 
-//import dates
-const dates = require('./date');
-
-//connect
-MONGODB_URL = 'mongodb://localhost:27017/mydb';
+MONGODB_URL = 'mongodb+srv://shir:shir@cluster0.oxayx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(MONGODB_URL,
     { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
         if (!err) {
@@ -23,5 +19,3 @@ mongoose.connect(MONGODB_URL,
             console.log('Syntax Error: ' + err)
         }
     });
-
-

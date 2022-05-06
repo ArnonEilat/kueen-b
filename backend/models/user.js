@@ -4,7 +4,7 @@ module.exports = function (mongoose) {
     const Schema = mongoose.Schema;
 
     const UserSchema = new Schema({
-        name: {
+        username: {
             type: String,
             required: true
         },
@@ -13,6 +13,6 @@ module.exports = function (mongoose) {
             required: true
         }
     });
-    const model = mongoose.model('User', UserSchema);
-    return model;
+    const user = mongoose.model('User', UserSchema);
+    return user;
 }

@@ -6,7 +6,7 @@ module.exports = function (mongoose) {
     const DateSchema = new Schema({
 
         Date: {
-            type: Date(),
+            type: Date,
             required: true
         },
         user: {
@@ -14,6 +14,6 @@ module.exports = function (mongoose) {
             required: true
         }
     });
-    const model = mongoose.model('Date', DateSchema);
-    return model;
+    const date = mongoose.model('Date', DateSchema);
+    return date;
 }
