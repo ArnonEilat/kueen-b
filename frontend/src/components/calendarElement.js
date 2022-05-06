@@ -1,5 +1,3 @@
-
-import { min } from 'moment';
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import './calendarElement.css';
@@ -13,7 +11,6 @@ function MyCalendar() {
     var minDate = time.setDate(time.getDate()-14)
     return (
       <div className='myCal'>
-        <h1 className='text-center'><br></br></h1>
         <div className='calendar-container'>
           <Calendar onChange={setDate} value={date} next2Label={null} prev2Label={null} 
           />
