@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { resetWatchers } = require('nodemon/lib/monitor/watch');
 const Dates = require('../models/date');
 
 router.route('/').get((req, res) => {
@@ -8,11 +9,14 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+    console.log("add date");
     const user = req.body.user;
-    const date = Dates.parse(req.body.date);
+    const date = Date.parse(req.body.date);
+    console.log(date);
+    console.log(req.body.date);
     const newDate = new Dates({
         user,
-        date,
+        date: req.body.date,
     });
 
     newDate.save()

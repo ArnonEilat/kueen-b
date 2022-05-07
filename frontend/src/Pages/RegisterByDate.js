@@ -3,47 +3,43 @@ import "./RegisterByDate.css";
 import Arrow from "../Icons/Arrow.svg";
 import { Link } from "react-router-dom";
 import postData from "../APIpost";
-import {useSelector} from "react-redux";
-import {selectUser} from "../redux/userSlice.js"
-
-
+import { useSelector } from "react-redux";
+import { selectUser } from "../redux/userSlice.js";
+import { selectDate } from "../redux/dateSlice.js";
+import MyCalendar from "../components/calendarElement.js";
+import axios from 'axios';
 function RegisterByDate() {
   //import user's info from redux:
-const user= useSelector(selectUser);
-const setDate = () => {
-  //import user's id from redux.
-  //get date from clander component
-  //
-    postData("/assignToDate", { user:"shir",date:"18/4/22" })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+  const userInstance = useSelector(selectUser);
+  const dateInstance = useSelector(selectDate);
+  //const chosenDate = MyCalendar.dateText;
+  const assignDate = () => {
+   // console.log(dateInstance.chosenDate);
+    console.log(userInstance.id);
+    axios.post('http://localhost:5000/dates/add',{user: userInstance.id, date: dateInstance.dateText})
+    .then(a=> {console.log("date chosen!")});
   };
-
-
-
   return (
     <div className="RegisterByDate">
       <div className="upperArea">
         <Link to="/OpeningScreen">
           <img src={Arrow} className="Arrow" />
         </Link>
-        <h1 className="headline">Hi {user.name}, when are you coming?</h1>
+        <h1 className="headline">Hi {userInstance.name}, when are you coming?</h1>
       </div>
-      <div className="calander"></div>
-      <div className="howManyArea">
-        <p className="attendance">See who registerd</p>{" "}
+      <div className="calendar">
+        <MyCalendar />
       </div>
       <div className="lowerArea">
-        <button className="continue" onClick={setDate}>
-          continue{" "}
+        <div className="howManyArea">
+          <p className="amount"> 8 registerd</p>
+          <p className="attendance">See who registerd</p>
+        </div>
+        <button onClick={assignDate} className="continue">
+          continue
         </button>
       </div>
     </div>
   );
 }
-
 export default RegisterByDate;
