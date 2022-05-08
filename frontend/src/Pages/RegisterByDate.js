@@ -18,6 +18,8 @@ function RegisterByDate() {
     console.log(userInstance.id);
     axios.post('http://localhost:5000/dates/add',{user: userInstance.id, date: dateInstance.dateText})
     .then(a=> {console.log("date chosen!")});
+    axios.post('http://localhost:5000/dates/getPerDate', {date: Date.parse(dateInstance.dateText)})
+    .then(a=> {console.log(a.data)});
   };
   return (
     <div className="RegisterByDate">
