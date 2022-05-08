@@ -6,13 +6,22 @@ import postData from "../APIpost";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/userSlice.js";
 import { selectDate } from "../redux/dateSlice.js";
-import MyCalendar from "../components/calendarElement.js";
+import { useNavigate } from "react-router-dom";
+import MyCalendar from "../components/calendarForReg.js";
 import axios from 'axios';
 function RegisterByDate() {
   //import user's info from redux:
   const userInstance = useSelector(selectUser);
   const dateInstance = useSelector(selectDate);
-  //const chosenDate = MyCalendar.dateText;
+  const navigateNextPage=()=>{
+
+  }
+  const navigate = useNavigate();
+  // const seeWhoRg= ('http://localhost:5000/dates/getPerDate') => {
+  //   // axios.get('')
+  //  //get request
+  //  //move to next page;
+  // }
   const assignDate = () => {
    // console.log(dateInstance.chosenDate);
     console.log(userInstance.id);
@@ -32,8 +41,9 @@ function RegisterByDate() {
       </div>
       <div className="lowerArea">
         <div className="howManyArea">
-          <p className="amount"> 8 registerd</p>
-          <p className="attendance">See who registerd</p>
+          <p className="amount">{/*dateInstance.sum*/} registerd</p>``
+          {/* /*should call a func that sends get req+ navigates to next page*/ }
+          <span className="attendance">See who registerd</span>
         </div>
         <button onClick={assignDate} className="continue">
           continue
