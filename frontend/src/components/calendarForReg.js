@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
-import "./calendarElement.css";
+import "./calendarForReg.css";
 import { useDispatch , useStore} from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
 import getData from "../APIcall";
