@@ -4,7 +4,7 @@ export const userSlice= createSlice({
   //the name of the slice:
     name:"user",
     initialState: {
-        user:null
+        user:{name:" ",mail:" ",id:" "}
     },
     //state- we will update the state of the slice.
     //action- the data that is gonna be passed to us.
