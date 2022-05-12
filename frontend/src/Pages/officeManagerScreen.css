@@ -1,27 +1,161 @@
 .officeManagerScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.officeManagerScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.line {
+  position: absolute;
+  width: 1133px;
+  height: 0px;
+  left: 476px;
+  top: 191px;
+  border: 0.25px solid #BEBEBE;
+}
+
+.topArea {
+  position: absolute;
+  width: 1699px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 10px rgba(51, 51, 51, 0.12));
+}
+
+.desktopnav {
+  position: absolute;
+  height: 80px;
+  left: 0px;
+  right: -120px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #F5F4F3;
+}
+
+.header {
+  position: absolute;
+  width: 125.21px;
+  height: 50px;
+  left: 65px;
+  top: 20px;
+}
+
+.Health {
+  position: absolute;
+    left: 43%;
+    right: 82.07%;
+    top: 23%;
+    bottom: 1.86%;
+    color: #2B8FFF;
+    font: caption;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.klogo {
+  height: 50px;
+  width: 50.999874114990234px;
+  border-radius: 0px;
+  display: flex;
+  position: absolute;
+  left: 4%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.registeredArea {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin: 5%;
+  padding: 30%;
+  padding-bottom: 10%;
+  background: white;
+  border-radius: 4px;
+}
+
+.sidebar {
+  position: absolute;
+  width: 400px;
+  height: 1600px;
+  left: 0px;
+  top: 80px;
+  background: #F5FAFF;
+}
 
 .myCal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Arial";
+  font-weight: bold;
+  position: absolute;
+  width: 400px;
+  height: 0px;
+  left: 0px;
+  top: 150px;
+  border-radius: 111px;
+}
 
-    position: absolute;
-    width: 42px;
-    height: 43px;
-    left: 25px;
-    top: 215px;
+.attendance {
+  position: absolute;
+  width: 291px;
+  height: 29px;
+  left: 506px;
+  top: 240px;
 
-    /* Gray 4 */
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #00406B;
 
-    border: 2px solid #BDBDBD;
-    border-radius: 111px;
+}
+
+.switchingdays {
+  position: absolute;
+  width: 306.01px;
+  height: 29px;
+  left: 910px;
+  top: 147px;
+}
+
+.nextArrow {
+  position: absolute;
+  right: 3%;
+  top: 0%;
+  bottom: 0%;
+  transform: rotate(180deg);
+}
+
+.prevArrow {
+  position: absolute;
+  left: -40%; 
+  top: 0%;
+  bottom: 0%;
+}
+
+.chosenDay {
+  position: absolute;
+    width: 120%;
+    left: auto;
+    right: 12%;
+    top: 10%;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 80%;
+    color: #00406B;
+    text-align: center;
 }
