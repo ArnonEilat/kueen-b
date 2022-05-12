@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import './NamesList.css';
 import { useSelector } from "react-redux";
 import { selectDate } from "../redux/dateSlice.js";
+import "../components/calendarElement.js";
 
 
 function NamesList() {
 
     const dateInstance = useSelector(selectDate);
-    const userslist =dateInstance.usersList;
-    const date=dateInstance.dateText;
+    const userslist = dateInstance.usersList;
+    const date = dateInstance.dateText;
+    console.log(dateInstance);
 
     return (
         <div className="NamesList">
@@ -26,7 +28,7 @@ function NamesList() {
                 </div>
             </div>
             <div className="nameslist">
-                {userslist}
+                <ol>{userslist && userslist.map((u) => <li>{u}</li>)}</ol>
             </div>
         </div>
     );
