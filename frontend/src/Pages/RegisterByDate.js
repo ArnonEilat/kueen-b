@@ -2,43 +2,49 @@ import React from "react";
 import "./RegisterByDate.css";
 import Arrow from "../Icons/Arrow.svg";
 import { Link } from "react-router-dom";
-import postData from "../APIpost";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/userSlice.js";
 import { selectDate } from "../redux/dateSlice.js";
-import MyCalendar from "../components/calendarElement.js";
+import { useNavigate } from "react-router-dom";
+import MyCalendar from "../components/calendarForReg.js";
+import axios from 'axios';
 
 function RegisterByDate() {
   //import user's info from redux:
-  const user = useSelector(selectUser);
-  const date = useSelector(selectDate);
+  const userInstance = useSelector(selectUser);
+  const dateInstance = useSelector(selectDate);
 
-  const assignDate = () => {
-    //   //import user's id from redux.
-    //   //get date from redux
-    //     // postData("/assignToDate", { user:"shir",date:"18/4/22" })
-    //     //   .then((data) => {
-    //     //     console.log(data);
-    //     //   })
-    //     //   .catch((error) => {
-    //     //     console.error("Error:", error);
-    //     //   });
-  };
+
+  // const navigateNextPage=()=>{
+  // }
+  const navigate = useNavigate();
+  // const seeWhoRg= ('http://localhost:5000/dates/getPerDate') => {
+  //   // axios.get('')
+  //  //get request
+  //  //move to next page;
+  // }
+  const assignDate = async () => {
+    console.log(userInstance.id);
+    await axios.post('http://localhost:5000/dates/add',{user: userInstance.id, date: dateInstance.dateText})
+    .then(()=> {console.log("date chosen!")})
+    //nav to next page inside then;
+  }
   return (
     <div className="RegisterByDate">
       <div className="upperArea">
         <Link to="/OpeningScreen">
           <img src={Arrow} className="Arrow" />
         </Link>
-        <h1 className="headline">Hi {user.name}, when are you coming?</h1>
+        <h1 className="headline">Hi {userInstance.name}, when are you coming?</h1>
       </div>
       <div className="calendar">
         <MyCalendar />
       </div>
       <div className="lowerArea">
         <div className="howManyArea">
-          <p className="amount"> 8 registerd</p>
-          <p className="attendance">See who registerd</p>
+          <p className="amount">{dateInstance.sum} registerd</p>
+          {/* /*should call a func that sends get req+ navigates to next page*/ }
+          <span className="attendance">See who registerd</span>
         </div>
         <button onClick={assignDate} className="continue">
           continue
