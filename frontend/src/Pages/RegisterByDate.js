@@ -26,7 +26,7 @@ function RegisterByDate() {
   const assignDate = async () => {
     console.log(userInstance.id);
     await axios.post('http://localhost:5000/dates/add', { user: userInstance.id, date: dateInstance.dateText })
-      .then(() => { console.log("date chosen!") })
+      .then(a => {navigate("/RegPerDate")  })
     //nav to next page inside then;
   }
   return (
