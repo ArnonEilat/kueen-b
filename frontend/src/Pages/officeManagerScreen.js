@@ -6,11 +6,21 @@ import K_Health_logo from "../Icons/logoK.svg";
 import React, { useState } from 'react';
 import leftArrow from "../Icons/leftArrow.svg";
 import rightArrow from "../Icons/rightArrow.svg";
+// import { userslist } from "./NamesList.js"
+
+import { useSelector } from "react-redux";
+import { selectDate } from "../redux/dateSlice.js";
+
 
 function OfficeManagerScreen() {
   const [date, setDate] = useState(new Date());
-  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  const dateInstance = useSelector(selectDate);
+  const userslist = dateInstance.usersList;
+
+
   return (
     <div className="OfficeManagerScreen">
       <div className="topArea">
@@ -24,7 +34,7 @@ function OfficeManagerScreen() {
       </div>
       <div className="sidebar">
         <div className="myCal">
-          <MyCalendar date={date} onChange={(newDate)=>setDate(newDate)}/> 
+          <MyCalendar date={date} onChange={(newDate) => setDate(newDate)} />
         </div>
       </div>
       <div className="chooseday" >
@@ -32,39 +42,44 @@ function OfficeManagerScreen() {
       <div className="line"></div>
       <div className="registeredArea">
         <div className="switchingdays">
-          
-          <img src={leftArrow} onClick={() => {const day=date.getDate()
-          const newDate=new Date(date)
-           newDate.setDate(day-1)
-           setDate(newDate)
+
+          <img src={leftArrow} onClick={() => {
+            const day = date.getDate()
+            const newDate = new Date(date)
+            newDate.setDate(day - 1)
+            setDate(newDate)
           }} className="prevArrow" />
 
-          <div className="chosenDay"> 
-           {weekday[date.getDay()]}
-           , {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()} 
+          <div className="chosenDay">
+            {weekday[date.getDay()]}
+            , {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
           </div>
-          
-          <img src={rightArrow} onClick={() => {const day=date.getDate()
-          const newDate=new Date(date)
-          if (day+1 === 5) {
-           newDate.setDate(day+2)
-           setDate(newDate)
-          }
-          else if (day+1 === 6) {
-            newDate.setDate(day+1)
-           setDate(newDate)
-          }
-          else {
-           newDate.setDate(day+1)
-           setDate(newDate)
-          }
-          //  newDate.setDate(day+1)
-          //  setDate(newDate)
+
+          <img src={rightArrow} onClick={() => {
+            const day = date.getDate()
+            const newDate = new Date(date)
+            if (day + 1 === 5) {
+              newDate.setDate(day + 2)
+              setDate(newDate)
+            }
+            else if (day + 1 === 6) {
+              newDate.setDate(day + 1)
+              setDate(newDate)
+            }
+            else {
+              newDate.setDate(day + 1)
+              setDate(newDate)
+            }
+            //  newDate.setDate(day+1)
+            //  setDate(newDate)
           }} className="nextArrow" />
-          
-          
         </div>
-        <p className="attendance">8 registered</p>
+        <div className="registerdArea">
+          <p className="amountregisterd">{dateInstance.sum} registerd</p>
+        </div>
+        <div className="list">
+          <ol>{userslist && userslist.map((u) => <li>{u}</li>)}</ol>
+        </div>
       </div>
     </div>
   );

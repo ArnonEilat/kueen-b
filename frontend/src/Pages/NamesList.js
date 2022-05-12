@@ -12,7 +12,6 @@ function NamesList() {
     const dateInstance = useSelector(selectDate);
     const userslist = dateInstance.usersList;
     const date = dateInstance.dateText;
-    console.log(dateInstance);
 
     return (
         <div className="NamesList">
