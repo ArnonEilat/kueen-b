@@ -1,7 +1,7 @@
 import React from "react";
-import OpeningScreen from "./Pages/OpeningScreen";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import OpeningScreen from "./Pages/OpeningScreen";
 import RegisterByDate from "./Pages/RegisterByDate.js";
 import NamesList from "./Pages/NamesList.js";
 import OfficeManagerScreen from "./Pages/OfficeManagerScreen.js";
