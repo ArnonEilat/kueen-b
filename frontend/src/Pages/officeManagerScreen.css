@@ -50,85 +50,14 @@
 
 .Health {
   position: absolute;
-  left: 42.81%;
-  right: 0%;
-  top: 27.78%;
-  bottom: 28.55%;
-  /* position: absolute;
-  top: 27.78%;
-  bottom: 28.55%;
-  height: 17.46841049194336px;
-  width: 68.74205017089844px;
-  left: 48.47216796875px;
-  top: 11.111114501953125px;
-  border-radius: 0px; */
-  font-family: "Arial";
-}
-
-.h1 {
-  position: absolute;
-  left: 0%;
-  right: 82.07%;
-  top: 0%;
-  bottom: 1.86%;
-  color: #2B8FFF;
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.e {
-  position: absolute;
-  left: 20.47%;
-  right: 60.77%;
-  top: 0%;
-  bottom: 0%;
-  color: #2B8FFF;
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.a {
-  position: absolute;
-  left: 38.1%;
-  right: 40.51%;
-  top: 0%;
-  bottom: 0%;
-  color: #2B8FFF;
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.l {
-  position: absolute;
-  left: 56.23%;
-  right: 33.6%;
-  top: 0%;
-  bottom: 1.86%;
-  color: #2B8FFF;
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.t {
-  position: absolute;
-  left: 65.59%;
-  right: 20.37%;
-  top: 0%;
-  bottom: 1.07%;
-  color: #2B8FFF;
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.h2 {
-  position: absolute;
-  left: 77.07%;
-  right: 0%;
-  top: 0%;
-  bottom: 1.87%;
-  color: #2B8FFF;
-  font-size: 23px;
-  font-weight: bold;
+    left: 43%;
+    right: 82.07%;
+    top: 23%;
+    bottom: 1.86%;
+    color: #2B8FFF;
+    font: caption;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .klogo {
@@ -199,4 +128,34 @@
   height: 29px;
   left: 910px;
   top: 147px;
+}
+
+.nextArrow {
+  position: absolute;
+  right: 3%;
+  top: 0%;
+  bottom: 0%;
+  transform: rotate(180deg);
+}
+
+.prevArrow {
+  position: absolute;
+  left: -40%; 
+  top: 0%;
+  bottom: 0%;
+}
+
+.chosenDay {
+  position: absolute;
+    width: 120%;
+    left: auto;
+    right: 12%;
+    top: 10%;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 80%;
+    color: #00406B;
+    text-align: center;
 }
