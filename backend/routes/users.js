@@ -8,7 +8,6 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    console.log("hey");
     const username = req.body.name;
     const mail = req.body.email;
     const newUser = new User({

@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import '../components/calendarElement.css';
 import '../components/calendarElement.js';
 import MyCalendar from '../components/calendarElement.js';
-import './officeManagerScreen.css';
+import './OfficeManagerScreen.css';
 import { Link } from "react-router-dom";
 
 

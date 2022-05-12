@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "./calendarElement.css";
-import { useDispatch , useStore} from "react-redux";
+import { useDispatch } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
-import getData from "../APIcall";
 
 function MyCalendar() {
   const [date, setDate] = useState(new Date());
-  const [sum,setSum]= useState("");
   const dateText = date.toDateString();
   const dispatch = useDispatch();
-
-
+  useEffect(() => {
+    return dispatch(
+      selectedDate({
+        // id: user_id,
+        chosenDate: date,
+        dateText: dateText,
+      })
+    );
+  }, [date]);
   return (
     <div className="myCal">
       <div className="calendar-container">
