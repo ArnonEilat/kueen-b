@@ -11,19 +11,7 @@ function MyCalendar() {
   const dateText = date.toDateString();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // getData(`/registerdSum=${dateText}`)
-    //   .then((res) => setSum(res.data))
-    //date.setHours(20);
-      return dispatch(
-        selectedDate({
-          dateText: dateText,
-          //sum:sum
-        })
-      );
-  }, [date]);
-  const store = useStore()
-  console.log(store);
+
   return (
     <div className="myCal">
       <div className="calendar-container">

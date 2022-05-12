@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Calendar from "react-calendar";
 import "./calendarForReg.css";
-import { useDispatch , useStore} from "react-redux";
+import { useDispatch, useStore } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
-import getData from "../APIcall";
-
+import axios from "axios";
+const postReq = async (dateText) => {
+  const array=await axios.post("http://localhost:5000/dates/getPerDate", {
+    date: dateText,
+  }); return array;
+};
 function MyCalendar() {
   const [date, setDate] = useState(new Date());
-  const [sum,setSum]= useState("");
   const dateText = date.toDateString();
   const dispatch = useDispatch();
-
   useEffect(() => {
-    // getData(`/registerdSum=${dateText}`)
-    //   .then((res) => setSum(res.data))
-    //date.setHours(20);
-      return dispatch(
-        selectedDate({
-          dateText: dateText,
-          //sum:sum
-        })
-      );
+   postReq(dateText).then(transferInfo=>{dispatch(
+      selectedDate({
+        dateText: dateText,
+        usersList:transferInfo.data,
+        sum: transferInfo.data.length,
+      })
+    );})
   }, [date]);
-  const store = useStore()
+  const store = useStore();
   console.log(store);
   return (
     <div className="myCal">
@@ -42,5 +42,4 @@ function MyCalendar() {
     </div>
   );
 }
-
 export default MyCalendar;

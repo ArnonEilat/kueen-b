@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./OpeningScreen.css";
 import K_Health_logo from "../Icons/logoK.svg";
 import img_button from "../Icons/calanderIcon.svg";
@@ -6,7 +6,6 @@ import getData from "../APIcall";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
-import postData from "../APIpost";
 import axios from 'axios';
 
 function OpeningScreen() {
@@ -14,20 +13,19 @@ function OpeningScreen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [data, setData] = useState(null);
-  const [id, setID] = useState("");
   const navigate = useNavigate();
   // useEffect(() => {
   //   if (data === "Ok") {
   //     return navigate("/RegisterByDate");
   //   }
   // }, [data]);
-  const assignUser = async (res) => {
+  const assignUser =  (res) => {
     //post request to register user to DB:
     // postData('/add', {name: "abc" ,mail: "email"})
     //   .then((res) => setID(res))
     //   .catch((res) => setData(res.line));
     console.log("hello");
-    await axios.post('http://localhost:5000/users/add',{name: name, email: email})
+    axios.post('http://localhost:5000/users/add',{name: name, email: email})
     .then(a=> { 
       dispatch(
         login({
@@ -36,16 +34,18 @@ function OpeningScreen() {
           id: a.data
         })
        );
+      return navigate("/RegisterByDate");
     });
 
     //set Data-change response line in order to move the next page
-    return navigate("/RegisterByDate");
+    
     
   };
   const regBtn = () => {
+
     console.log("regBtn");
     //get request in order to check mail validation:
-    getData(`/validation?email=${email}`)
+   getData(`/validation?email=${email}`)
       //if we get id->dispatch:
       .then((res) => assignUser(res))
       //else- error/ call func again :
