@@ -18,14 +18,14 @@ function RegisterByDate() {
   // const navigateNextPage=()=>{
   // }
   const navigate = useNavigate();
-  // const seeWhoRg= ('http://localhost:6000/dates/getPerDate') => {
+  // const seeWhoRg= ('http://localhost:5000/dates/getPerDate') => {
   //   // axios.get('')
   //  //get request
   //  //move to next page;
   // }
   const assignDate = async () => {
     console.log(userInstance.id);
-    await axios.post('http://localhost:6000/dates/add', { user: userInstance.id, date: dateInstance.dateText })
+    await axios.post('http://localhost:5000/dates/add', { user: userInstance.id, date: dateInstance.dateText })
       .then(() => { console.log("date chosen!") })
     //nav to next page inside then;
   }
