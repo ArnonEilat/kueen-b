@@ -4,6 +4,7 @@ import "./calendarForReg.css";
 import { useDispatch, useStore } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
 import axios from "axios";
+
 const postReq = async (dateText) => {
   const array = await axios.post("http://localhost:5000/dates/getPerDate", {
     date: dateText,
