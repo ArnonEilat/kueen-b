@@ -14,8 +14,8 @@ import { selectDate } from "../redux/dateSlice.js";
 
 function OfficeManagerScreen() {
   const [date, setDate] = useState(new Date());
-  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const WEEK_DAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const MONTH = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   const dateInstance = useSelector(selectDate);
   const userslist = dateInstance.usersList;
