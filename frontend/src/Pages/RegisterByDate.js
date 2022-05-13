@@ -13,9 +13,6 @@ function RegisterByDate() {
   //import user's info from redux:
   const userInstance = useSelector(selectUser);
   const dateInstance = useSelector(selectDate);
-
-
-
   const navigate = useNavigate();
   const assignDate = async () => {
     console.log(userInstance.id);
@@ -37,7 +34,7 @@ function RegisterByDate() {
         <div className="howManyArea">
           <p className="amount">{dateInstance.sum} registerd</p>
           {/* /*should call a func that sends get req+ navigates to next page*/}
-          <span className="attendance">See who registerd</span>
+         <Link to='/NamesList'><span className="attendance">See who registerd</span></Link> 
         </div>
           <button onClick={assignDate} className="continue">
             continue
