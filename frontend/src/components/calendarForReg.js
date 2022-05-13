@@ -4,6 +4,7 @@ import "./calendarForReg.css";
 import { useDispatch, useStore } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
 import axios from "axios";
+
 const postReq = async (dateText) => {
   const array = await axios.post("http://localhost:5001/dates/getPerDate", {
     date: dateText,
@@ -28,7 +29,7 @@ function MyCalendar(props) {
   console.log(store);
   return (
     <div className="myCal2">
-      <div className="calendar-container">
+      <div className="calendar-container2">
         <Calendar onChange={props.onChange} value={props.date} next2Label={null} prev2Label={null} calendarType="Hebrew"
           navigationLabel={({ date, label, locale, view }) => {
             return date.toLocaleDateString('en-us', { month: 'long', year: 'numeric' });

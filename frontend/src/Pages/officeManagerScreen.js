@@ -6,17 +6,12 @@ import K_Health_logo from "../Icons/logoK.svg";
 import React, { useState } from 'react';
 import leftArrow from "../Icons/leftArrow.svg";
 import rightArrow from "../Icons/rightArrow.svg";
-// import { userslist } from "./NamesList.js"
-
 import { useSelector } from "react-redux";
 import { selectDate } from "../redux/dateSlice.js";
 
 
 function OfficeManagerScreen() {
   const [date, setDate] = useState(new Date());
-  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
   const dateInstance = useSelector(selectDate);
   const userslist = dateInstance.usersList;
 
@@ -51,8 +46,7 @@ function OfficeManagerScreen() {
           }} className="prevArrow" />
 
           <div className="chosenDay">
-            {weekday[date.getDay()]}
-            , {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
+            {dateInstance.dateText}
           </div>
 
           <img src={rightArrow} onClick={() => {
@@ -70,8 +64,6 @@ function OfficeManagerScreen() {
               newDate.setDate(day + 1)
               setDate(newDate)
             }
-            //  newDate.setDate(day+1)
-            //  setDate(newDate)
           }} className="nextArrow" />
         </div>
         <div className="registerdArea">

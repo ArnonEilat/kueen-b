@@ -47,7 +47,6 @@ router.route('/getPerDate').post((req, res) => {
 
 router.route('/add').post((req, res) => {
     const user = req.body.user;
-    const date = Date.parse(req.body.date);
     const newDate = new Dates({
         user,
         date: req.body.date,
