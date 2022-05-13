@@ -1,11 +1,4 @@
-.officeManagerScreen {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.officeManagerScreen {
+.OfficeManagerScreen {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -92,7 +85,7 @@
   background: #F5FAFF;
 }
 
-.myCal {
+#officeCal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,9 +93,9 @@
   font-weight: bold;
   position: absolute;
   width: 400px;
-  height: 0px;
+  /* height: 0px; */
   left: 0px;
-  top: 150px;
+  /* top: 150px; */
   border-radius: 111px;
 }
 

@@ -10,7 +10,7 @@ function MyCalendar(props) {
   //const [date, setDate] = useState(new Date());
   const headerRender = () => null;
   return (
-    <div className='myCal'>
+    <div className='myCal'  id="parOfficeCal">
       <div className='calendar-container'>
         <Calendar onChange={props.onChange} value={props.date} next2Label={null} prev2Label={null} calendarType="Hebrew" 
           navigationLabel={({ date, label, locale, view }) => {

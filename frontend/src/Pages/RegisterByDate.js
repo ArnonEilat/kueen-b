@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../redux/userSlice.js";
 import { selectDate } from "../redux/dateSlice.js";
 import { useNavigate } from "react-router-dom";
-import MyCalendar from "../components/calendarForReg.js";
+import MyCalendar1 from "../components/calendarForReg.js";
 import axios from 'axios';
 
 function RegisterByDate() {
@@ -15,19 +15,12 @@ function RegisterByDate() {
   const dateInstance = useSelector(selectDate);
 
 
-  // const navigateNextPage=()=>{
-  // }
+
   const navigate = useNavigate();
-  // const seeWhoRg= ('http://localhost:5001/dates/getPerDate') => {
-  //   // axios.get('')
-  //  //get request
-  //  //move to next page;
-  // }
   const assignDate = async () => {
     console.log(userInstance.id);
-    await axios.post('http://localhost:5001/dates/add', { user: userInstance.id, date: dateInstance.dateText })
+    await axios.post('http://localhost:5000/dates/add', { user: userInstance.id, date: dateInstance.dateText })
       .then(a => {navigate("/NamesList")  })
-    //nav to next page inside then;
   }
   return (
     <div className="RegisterByDate">
@@ -35,10 +28,10 @@ function RegisterByDate() {
         <Link to="/OpeningScreen">
           <img src={Arrow} className="Arrow" />
         </Link>
-        <h1 className="headline">Hi {userInstance.name}, when are you coming?</h1>
+        <h1 className="headline">When are you coming?</h1>
       </div>
-      <div className="calendar">
-        <MyCalendar />
+      <div className="calendar" id="calReg">
+        <MyCalendar1 />
       </div>
       <div className="lowerArea">
         <div className="howManyArea">
@@ -46,12 +39,9 @@ function RegisterByDate() {
           {/* /*should call a func that sends get req+ navigates to next page*/}
           <span className="attendance">See who registerd</span>
         </div>
-        <Link to="/NamesList">
           <button onClick={assignDate} className="continue">
             continue
           </button>
-        </Link>
-          
       </div>
     </div>
   );

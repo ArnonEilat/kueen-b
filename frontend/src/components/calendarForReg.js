@@ -5,11 +5,11 @@ import { useDispatch, useStore } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
 import axios from "axios";
 const postReq = async (dateText) => {
-  const array = await axios.post("http://localhost:5001/dates/getPerDate", {
+  const array = await axios.post("http://localhost:5000/dates/getPerDate", {
     date: dateText,
   }); return array;
 };
-function MyCalendar(props) {
+function MyCalendar1() {
   const [date, setDate] = useState(new Date());
   const dateText = date.toDateString();
   const dispatch = useDispatch();
@@ -27,9 +27,9 @@ function MyCalendar(props) {
   const store = useStore();
   console.log(store);
   return (
-    <div className="myCal2">
+    <div className="MyCal2" id="parentCal">
       <div className="calendar-container">
-        <Calendar onChange={props.onChange} value={props.date} next2Label={null} prev2Label={null} calendarType="Hebrew"
+        <Calendar onChange={setDate} value={date} next2Label={null} prev2Label={null} calendarType="Hebrew"
           navigationLabel={({ date, label, locale, view }) => {
             return date.toLocaleDateString('en-us', { month: 'long', year: 'numeric' });
           }
@@ -46,7 +46,7 @@ function MyCalendar(props) {
         />
 
       </div>
-      <p className="text center">
+      <p className="text_center">
         <span className="bold">Selected Date:</span>
         {" " + dateText}
       </p>
@@ -54,4 +54,4 @@ function MyCalendar(props) {
     </div>
   );
 }
-export default MyCalendar;
+export default MyCalendar1;
