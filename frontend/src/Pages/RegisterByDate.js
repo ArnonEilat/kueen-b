@@ -18,15 +18,15 @@ function RegisterByDate() {
   // const navigateNextPage=()=>{
   // }
   const navigate = useNavigate();
-  // const seeWhoRg= ('http://localhost:5000/dates/getPerDate') => {
+  // const seeWhoRg= ('http://localhost:5001/dates/getPerDate') => {
   //   // axios.get('')
   //  //get request
   //  //move to next page;
   // }
   const assignDate = async () => {
     console.log(userInstance.id);
-    await axios.post('http://localhost:5000/dates/add',{user: userInstance.id, date: dateInstance.dateText})
-    .then(()=> {console.log("date chosen!")})
+    await axios.post('http://localhost:5001/dates/add', { user: userInstance.id, date: dateInstance.dateText })
+      .then(a => {navigate("/NamesList")  })
     //nav to next page inside then;
   }
   return (
@@ -43,12 +43,15 @@ function RegisterByDate() {
       <div className="lowerArea">
         <div className="howManyArea">
           <p className="amount">{dateInstance.sum} registerd</p>
-          {/* /*should call a func that sends get req+ navigates to next page*/ }
+          {/* /*should call a func that sends get req+ navigates to next page*/}
           <span className="attendance">See who registerd</span>
         </div>
-        <button onClick={assignDate} className="continue">
-          continue
-        </button>
+        <Link to="/NamesList">
+          <button onClick={assignDate} className="continue">
+            continue
+          </button>
+        </Link>
+          
       </div>
     </div>
   );

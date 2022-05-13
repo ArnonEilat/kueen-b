@@ -29,28 +29,6 @@
   border-style: hidden;
 }
 
-/* .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
-  border-style: hidden;
-  border-radius: 250px;
-  height: 48px;
-  width: auto;
-  margin: 1px;
-  margin-left: 35px;
-  margin-right: 37px;
-  color: #00406b;
-  font-size: 30px;
-} */
-/* .react-calendar__navigation__arrow.react-calendar__navigation__prev-button {
-  border-style: hidden;
-  border-radius: 250px;
-  height: 55px;
-  width: auto;
-  margin: 1px;
-  margin-left: 35px;
-  margin-right: 35px;
-  color: #00406b;
-  font-size: 30px;
-} */
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
   background-color: #f8f8fa;
@@ -107,10 +85,7 @@ button.react-calendar__tile.react-calendar__month-view__days__day {
   text-align: center;
   font-feature-settings: "tnum" on, "lnum" on;
   flex: none !important;
-  /* Green 3 */
   color: #6fcf97;
-  /* Inside auto layout */
-  flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0px 0px;
@@ -204,9 +179,7 @@ button.react-calendar__tile--active.react-calendar__tile--now.react-calendar__mo
   height: 48px;
   width: 47px;
 }
-/* .react-calendar--selectRange .react-calendar__tile--hover {
-  background-color: #f8f8fa;
-} */
+ 
 .react-calendar__tile--range {
   background: #f8f8fa;
   color: #6fcf97;

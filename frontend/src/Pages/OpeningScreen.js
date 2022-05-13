@@ -25,7 +25,7 @@ function OpeningScreen() {
     //   .then((res) => setID(res))
     //   .catch((res) => setData(res.line));
     console.log("hello");
-    axios.post('http://localhost:5000/users/add',{name: name, email: email})
+    axios.post('http://localhost:5001/users/add',{name: name, email: email})
     .then(a=> { 
       dispatch(
         login({
@@ -72,7 +72,7 @@ function OpeningScreen() {
           {" "}
           <img src={img_button} className="imgButton" />
           <p className="textButton">
-            Register to a day<br></br> in the office
+            Register to a day<br></br> in the Office
           </p>
         </button>
       </div>{" "}
