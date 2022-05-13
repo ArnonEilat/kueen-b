@@ -9,7 +9,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-const userpromisefunc = (_id) => {
+const userPromiseFunc = (_id) => {
     return new Promise((resolve, reject) => {
         Users.find({ _id: _id }, (err, result2) => {
             if (err) {
