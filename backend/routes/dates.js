@@ -39,7 +39,6 @@ router.route('/getPerDate').post((req, res) => {
             const users = await Promise.all(userPromiseArray)
             console.log(users, "this is the whole namesusersarrsay");
             res.send(users);
-            console.log(users);
         }
     });
 });
