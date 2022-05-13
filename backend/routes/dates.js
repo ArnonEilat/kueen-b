@@ -32,7 +32,7 @@ router.route('/getPerDate').post((req, res) => {
 
             result.forEach((elem) => {
 
-                const usrPromise = userpromisefunc(elem.user)
+                const usrPromise = userPromiseFunc(elem.user)
                 userPromiseArray.push(usrPromise)
 
             });

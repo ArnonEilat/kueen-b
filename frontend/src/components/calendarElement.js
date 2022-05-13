@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 const postReq = async (dateText) => {
-  const array = await axios.post("http://localhost:5001/dates/getPerDate", {
+  const array = await axios.post("http://localhost:5000/dates/getPerDate", {
     date: dateText,
   }); return array;
 };
