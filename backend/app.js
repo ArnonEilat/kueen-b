@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-MONGODB_URL = 'mongodb+srv://shir:shir@cluster0.oxayx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+MONGODB_URL = 'mongodb://localhost:27017/attendanceDB';
 mongoose.connect(MONGODB_URL,
     { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
         if (!err) {
