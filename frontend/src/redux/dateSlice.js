@@ -4,7 +4,7 @@ export const dateSlice= createSlice({
   //the name of the slice:
     name:"date",
     initialState: {
-        date:{dateText:" ",usersList:[],sum:0}
+        date:{date:0,dateText:" ",usersList:[],sum:0}
     },
     //state- we will update the state of the slice.
     //action- the data that is gonna be passed to us.

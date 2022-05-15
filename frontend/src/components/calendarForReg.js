@@ -18,6 +18,7 @@ function MyCalendar1() {
     postReq(dateText).then(transferInfo => {
       dispatch(
         selectedDate({
+          date:date,
           dateText: dateText,
           usersList: transferInfo.data,
           sum: transferInfo.data.length,
