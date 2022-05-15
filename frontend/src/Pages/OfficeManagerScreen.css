@@ -1,11 +1,4 @@
-.officeManagerScreen {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.officeManagerScreen {
+.OfficeManagerScreen {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -50,14 +43,14 @@
 
 .Health {
   position: absolute;
-    left: 43%;
-    right: 82.07%;
-    top: 23%;
-    bottom: 1.86%;
-    color: #2B8FFF;
-    font: caption;
-    font-weight: bold;
-    font-size: x-large;
+  left: 43%;
+  right: 82.07%;
+  top: 23%;
+  bottom: 1.86%;
+  color: #2B8FFF;
+  font: caption;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .klogo {
@@ -92,7 +85,7 @@
   background: #F5FAFF;
 }
 
-.myCal {
+#officeCal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,26 +93,10 @@
   font-weight: bold;
   position: absolute;
   width: 400px;
-  height: 0px;
+  /* height: 0px; */
   left: 0px;
-  top: 150px;
+  /* top: 150px; */
   border-radius: 111px;
-}
-
-.attendance {
-  position: absolute;
-  width: 291px;
-  height: 29px;
-  left: 506px;
-  top: 240px;
-
-  font-family: 'Arial';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 120%;
-  color: #00406B;
-
 }
 
 .switchingdays {
@@ -140,22 +117,64 @@
 
 .prevArrow {
   position: absolute;
-  left: -40%; 
+  left: -40%;
   top: 0%;
   bottom: 0%;
 }
 
 .chosenDay {
   position: absolute;
-    width: 120%;
-    left: auto;
-    right: 12%;
-    top: 10%;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 80%;
-    color: #00406B;
-    text-align: center;
+  width: 120%;
+  left: auto;
+  right: 12%;
+  top: 10%;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 80%;
+  color: #00406B;
+  text-align: center;
+}
+
+.registerdArea {
+  position: absolute;
+  width: 190px;
+  height: 80px;
+  left: 506px;
+  top: 240px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #00406B;
+}
+
+.amountregisterd {
+
+  position: absolute;
+  width: 190px;
+  height: 30px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #00406B;
+}
+
+.list {
+  position: absolute;
+  width: 198px;
+  height: 300px;
+  left: 504px;
+  top: 301px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #00406B;
+
 }

@@ -9,6 +9,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-left:8%;
+  margin-right:5%;
   width: 100%;
   padding: 5%;
   background: #ffffff;
@@ -66,10 +68,11 @@
   padding-left: 100%;
   padding-right: 100%;
   white-space: nowrap;
+  /* margin-top:10%; */
 }
 .attendance {
   font-family: "Arial";
-  margin-bottom:0%;
+  /* margin-top:30%; */
   font-style: normal;
   font-weight: 400;
   font-size: 5vw;

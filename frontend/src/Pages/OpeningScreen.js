@@ -72,7 +72,7 @@ function OpeningScreen() {
           {" "}
           <img src={img_button} className="imgButton" />
           <p className="textButton">
-            Register to a day<br></br> in the office
+            Register to a day<br></br> in the Office
           </p>
         </button>
       </div>{" "}

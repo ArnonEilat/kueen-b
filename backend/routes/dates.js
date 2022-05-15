@@ -9,7 +9,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-const userpromisefunc = (_id) => {
+const userPromiseFunc = (_id) => {
     return new Promise((resolve, reject) => {
         Users.find({ _id: _id }, (err, result2) => {
             if (err) {
@@ -32,24 +32,21 @@ router.route('/getPerDate').post((req, res) => {
 
             result.forEach((elem) => {
 
-                const usrPromise = userpromisefunc(elem.user)
+                const usrPromise = userPromiseFunc(elem.user)
                 userPromiseArray.push(usrPromise)
 
             });
             const users = await Promise.all(userPromiseArray)
-            console.log("got here");
             console.log(users, "this is the whole namesusersarrsay");
             res.send(users);
-            console.log(users);
         }
     });
 });
 
 router.route('/add').post((req, res) => {
     const user = req.body.user;
-    const date = Date.parse(req.body.date);
     const newDate = new Dates({
-        user,
+        user:user,
         date: req.body.date,
     });
 
