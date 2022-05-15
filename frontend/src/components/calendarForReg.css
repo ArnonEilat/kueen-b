@@ -55,7 +55,7 @@
   font-size: 30px;
 }
 #parentCal .react-calendar__navigation button:enabled:hover {
-  background-color: gray;
+  background-color: #6fcf97;
 }
 #parentCal .react-calendar__navigation button:enabled:focus {
   background-color: #f8f8fa;
@@ -137,7 +137,7 @@
 }
 #parentCal
   button.react-calendar__tile.react-calendar__month-view__days__day:hover {
-  background-color: gray;
+  background-color: #6fcf97;
 }
 #parentCal .react-calendar__navigation {
   border-radius: 250px;
@@ -155,7 +155,7 @@
 }
 #parentCal .react-calendar__tile:enabled:hover,
 #parentCal .react-calendar__tile:enabled:focus {
-  background: gray;
+  background: #6fcf97;
   color: #6fcf97;
   flex: none;
   order: 0;
@@ -201,9 +201,9 @@
 
 #parentCal
   button.react-calendar__tile.react-calendar__tile--now.react-calendar__month-view__days__day {
-  color: #003355;
-  border-color: #6fcf97;
-  background-color: #f2c94c;
+  color: #f2c94c;
+  border-color: #f2c94c;
+  background-color: #f0f0f0;
   height: 43px;
   width: 42px;
   flex: none !important;
@@ -247,4 +247,14 @@
   border-bottom-right-radius: 6px;
   background: #6fcf97;
   color: white;
+}
+
+#parentCal
+  button.react-calendar__tile.react-calendar__tile--now.react-calendar__month-view__days__day.react-calendar__tile--active {
+  color: #003355;
+  border-color: #f2c94c;
+  background-color: #6fcf97;
+  height: 43px;
+  width: 42px;
+  flex: none !important;
 }
