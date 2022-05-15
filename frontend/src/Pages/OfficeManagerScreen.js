@@ -28,7 +28,7 @@ function OfficeManagerScreen() {
         </div>
       </div>
       <div className="sidebar">
-        <div className="myCal">
+        <div className="myCal" id="officeCal">
           <MyCalendar date={date} onChange={(newDate) => setDate(newDate)} />
         </div>
       </div>
