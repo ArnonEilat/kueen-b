@@ -10,6 +10,29 @@ import { useDispatch, useStore } from "react-redux";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectDate, selectedDate } from "../redux/dateSlice.js";
+const WEEKDAY = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const MONTH = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 const postReq = async (dateText) => {
   const array = await axios.post("http://localhost:5000/dates/getPerDate", {
     date: dateText,
@@ -18,29 +41,7 @@ const postReq = async (dateText) => {
 };
 function OfficeManagerScreen() {
   const [date, setDate] = useState(new Date());
-  const WEEKDAY = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const MONTH = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+
   const dateText = date.toDateString();
   const dispatch = useDispatch();
   const dateInstance = useSelector(selectDate);
@@ -101,8 +102,6 @@ function OfficeManagerScreen() {
                 newDate.setDate(day + 1);
                 setDate(newDate);
               }
-              //  newDate.setDate(day+1)
-              //  setDate(newDate)
             }}
             className="nextArrow"
           />
