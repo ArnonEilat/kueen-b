@@ -10,7 +10,7 @@
   height: 0px;
   left: 476px;
   top: 191px;
-  border: 0.25px solid #BEBEBE;
+  border: 0.25px solid #bebebe;
 }
 .topArea {
   position: absolute;
@@ -26,8 +26,8 @@
   left: 0px;
   right: -120px;
   top: 0px;
-  background: #FFFFFF;
-  border: 1px solid #F5F4F3;
+  background: #ffffff;
+  border: 1px solid #f5f4f3;
 }
 .header {
   position: absolute;
@@ -42,7 +42,7 @@
   right: 82.07%;
   top: 23%;
   bottom: 1.86%;
-  color: #2B8FFF;
+  color: #2b8fff;
   font: caption;
   font-weight: bold;
   font-size: x-large;
@@ -74,7 +74,7 @@
   height: 1600px;
   left: 0px;
   top: 80px;
-  background: #F5FAFF;
+  background: #f5faff;
 }
 #officeCal {
   display: flex;
@@ -84,9 +84,7 @@
   font-weight: bold;
   position: absolute;
   width: 400px;
-  /* height: 0px; */
   left: 0px;
-  /* top: 150px; */
   border-radius: 111px;
 }
 .switchingdays {
@@ -120,7 +118,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 80%;
-  color: #00406B;
+  color: #00406b;
   text-align: center;
 }
 .registerdArea {
@@ -129,23 +127,23 @@
   height: 80px;
   left: 506px;
   top: 240px;
-  font-family: 'Arial';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
-  color: #00406B;
+  color: #00406b;
 }
 .numOfReg {
   position: absolute;
   width: 190px;
   height: 30px;
-  font-family: 'Arial';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
-  color: #00406B;
+  color: #00406b;
 }
 
 .list {
@@ -154,11 +152,10 @@
   height: 300px;
   left: 504px;
   top: 301px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
-  color: #00406B;
-
+  color: #00406b;
 }

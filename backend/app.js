@@ -1,8 +1,8 @@
 const express = require("express");
-const mongoose = require('mongoose');
-const cors = require('cors');
+const mongoose = require("mongoose");
+const cors = require("cors");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -10,30 +10,32 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-MONGODB_URL = 'mongodb://localhost:27017/attendanceDB';
-mongoose.connect(MONGODB_URL,
-    { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
-        if (!err) {
-            //this is the actuall creation
-            const UsersModel = users(mongoose);
-            const DatesModel = dates(mongoose);
-            console.log('Successfully Connected in MongoDB')
-        }
+MONGODB_URL =
+  "mongodb+srv://shir:shir@cluster0.oxayx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(
+  MONGODB_URL,
+  { useUnifiedTopology: true, useNewUrlParser: true },
+  (err) => {
+    if (!err) {
+      //this is the actuall creation
+      const UsersModel = users(mongoose);
+      const DatesModel = dates(mongoose);
+      console.log("Successfully Connected in MongoDB");
+    } else {
+      console.log("Syntax Error: " + err);
+    }
+  }
+);
 
-        else {
-            console.log('Syntax Error: ' + err)
-        }
-    });
+const users = require("./models/user");
+const dates = require("./models/date");
 
-    const users = require('./models/user');
-    const dates = require('./models/date');
-    
-    const datesRouter = require('./routes/dates');
-    const usersRouter = require('./routes/users');
-    
-    app.use('/dates',datesRouter);
-    app.use('/users',usersRouter);
-    
+const datesRouter = require("./routes/dates");
+const usersRouter = require("./routes/users");
+
+app.use("/dates", datesRouter);
+app.use("/users", usersRouter);
+
 function emailRegex(input) {
   let regex = /[a-zA-Z]+@khealth\.com/i;
   return regex.test(input);

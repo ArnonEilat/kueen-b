@@ -10,6 +10,7 @@ import { useDispatch, useStore } from "react-redux";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectDate, selectedDate } from "../redux/dateSlice.js";
+
 const postReq = async (dateText) => {
   const array = await axios.post("http://localhost:5000/dates/getPerDate", {
     date: dateText,
@@ -78,10 +79,17 @@ function OfficeManagerScreen() {
           <img
             src={leftArrow}
             onClick={() => {
-              const day = date.getDate();
+              const day = date.getDay();
+              const dayOnMonth = date.getDate();
               const newDate = new Date(date);
-              newDate.setDate(day - 1);
-              setDate(newDate);
+              // to skip weekends by arrows
+              if (day - 1 === -1) {
+                newDate.setDate(dayOnMonth - 3);
+                setDate(newDate);
+              } else {
+                newDate.setDate(dayOnMonth - 1);
+                setDate(newDate);
+              }
             }}
             className="prevArrow"
           />
@@ -92,17 +100,17 @@ function OfficeManagerScreen() {
           <img
             src={rightArrow}
             onClick={() => {
-              const day = date.getDate();
+              const day = date.getDay();
+              const dayOnMonth = date.getDate();
               const newDate = new Date(date);
+              // to skip weekends by arrows
               if (day + 1 === 5) {
-                newDate.setDate(day + 2);
+                newDate.setDate(dayOnMonth + 3);
                 setDate(newDate);
               } else {
-                newDate.setDate(day + 1);
+                newDate.setDate(dayOnMonth + 1);
                 setDate(newDate);
               }
-              //  newDate.setDate(day+1)
-              //  setDate(newDate)
             }}
             className="nextArrow"
           />
