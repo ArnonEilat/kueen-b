@@ -236,3 +236,13 @@
   background: #6fcf97;
   color: white;
 }
+
+#parentCal
+  button.react-calendar__tile.react-calendar__tile--now.react-calendar__month-view__days__day.react-calendar__tile--active {
+  color: #003355;
+  border-color: #f2c94c;
+  background-color: #6fcf97;
+  height: 43px;
+  width: 42px;
+  flex: none !important;
+}

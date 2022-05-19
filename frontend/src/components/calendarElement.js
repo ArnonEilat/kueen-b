@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "./calendarElement.css";
 function MyCalendar(props) {
-  //const [date, setDate] = useState(new Date());
   const headerRender = () => null;
   return (
     <div className="myCal" id="parOfficeCal">
@@ -22,6 +21,7 @@ function MyCalendar(props) {
           formatShortWeekday={(locale, date) => {
             return date.toLocaleDateString("en-us", { weekday: "short" });
           }}
+          //disable tile on weekend
           tileDisabled={({ activeStartDate, date, view }) => {
             const day = date.getDay();
             return day === 6 || day === 5;

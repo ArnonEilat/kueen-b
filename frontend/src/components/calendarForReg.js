@@ -8,45 +8,50 @@ import axios from "axios";
 const postReq = async (dateText) => {
   const array = await axios.post("http://localhost:5000/dates/getPerDate", {
     date: dateText,
-  }); return array;
+  });
+  return array;
 };
 function MyCalendar1() {
   const [date, setDate] = useState(new Date());
   const dateText = date.toDateString();
   const dispatch = useDispatch();
   useEffect(() => {
-    postReq(dateText).then(transferInfo => {
+    postReq(dateText).then((transferInfo) => {
       dispatch(
         selectedDate({
-          date:date,
+          date: date,
           dateText: dateText,
           usersList: transferInfo.data,
           sum: transferInfo.data.length,
         })
       );
-    })
+    });
   }, [date]);
   const store = useStore();
   console.log(store);
   return (
     <div className="MyCal2" id="parentCal">
       <div className="calendar-container">
-        <Calendar onChange={setDate} value={date} next2Label={null} prev2Label={null} calendarType="Hebrew"
+        <Calendar
+          onChange={setDate}
+          value={date}
+          next2Label={null}
+          prev2Label={null}
+          calendarType="Hebrew"
           navigationLabel={({ date, label, locale, view }) => {
-            return date.toLocaleDateString('en-us', { month: 'long', year: 'numeric' });
-          }
-          }
+            return date.toLocaleDateString("en-us", {
+              month: "long",
+              year: "numeric",
+            });
+          }}
           formatShortWeekday={(locale, date) => {
-            return date.toLocaleDateString('en-us', { weekday: 'short' });
-          }
-          }
+            return date.toLocaleDateString("en-us", { weekday: "short" });
+          }}
           tileDisabled={({ activeStartDate, date, view }) => {
-            const day = date.getDay()
-            return (day === 6 || day === 5);
-          }
-          }
+            const day = date.getDay();
+            return day === 6 || day === 5;
+          }}
         />
-
       </div>
       <p className="text_center">
         <span className="bold">Selected Date:</span>
