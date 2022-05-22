@@ -28,35 +28,27 @@
   border-radius: 111px;
   border-style: hidden;
 }
-
-/* .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
+#parOfficeCal
+  .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
   border-style: hidden;
   border-radius: 250px;
   height: 48px;
   width: auto;
   margin: 1px;
-  margin-left: 35px;
   margin-right: 37px;
   color: #00406b;
   font-size: 30px;
-} */
-/* .react-calendar__navigation__arrow.react-calendar__navigation__prev-button {
+}
+#parOfficeCal
+  .react-calendar__navigation__arrow.react-calendar__navigation__prev-button {
   border-style: hidden;
   border-radius: 250px;
   height: 55px;
   width: auto;
   margin: 1px;
   margin-left: 35px;
-  margin-right: 35px;
   color: #00406b;
   font-size: 30px;
-} */
-#parOfficeCal .react-calendar__navigation button:enabled:hover,
-#parOfficeCal .react-calendar__navigation button:enabled:focus {
-  background-color: #f8f8fa;
-}
-#parOfficeCal .react-calendar__navigation button[disabled] {
-  background-color: #f0f0f0;
 }
 #parOfficeCal abbr[title] {
   text-decoration: none;
@@ -73,9 +65,9 @@
 #parOfficeCal .react-calendar__navigation {
   border-radius: 250px;
   border-style: hidden;
-  height: 55px;
+  height: 70px;
   width: auto;
-  margin-left: 6px;
+  margin: 1px;
 }
 #parOfficeCal .react-calendar__tile:enabled:hover,
 #parOfficeCal .react-calendar__tile:enabled:focus {
@@ -99,6 +91,16 @@
   color: #00406b;
   font-weight: bold;
   margin-left: 3px;
+}
+#parOfficeCal
+  .react-calendar__month-view__weekdays__weekday.react-calendar__month-view__days.react-calendar__tile--active {
+  color: #003355;
+  border-color: #6fcf97;
+  background-color: #6fcf97;
+}
+#parOfficeCal .react-calendar__month-view__weekdays {
+  margin-left: 6px;
+  margin-bottom: 20px;
 }
 #parOfficeCal
   button.react-calendar__tile.react-calendar__month-view__days__day {
@@ -164,7 +166,6 @@
   height: 48px;
   width: 47px;
 }
-
 #parOfficeCal .react-calendar__tile--now:enabled:focus {
   background: #f8f8fa;
   border-radius: 22px;
@@ -185,13 +186,19 @@
   flex: none !important;
 }
 #parOfficeCal
-  button.react-calendar__tile--active.react-calendar__tile--now.react-calendar__month-view__days__day {
+  button.react-calendar__tile--now.react-calendar__tile--active.react-calendar__month-view__days__day {
   color: #003355;
-  border-color: #6fcf97;
-  background-color: #f2c94c;
+  border-color: #f2c94c !important;
+  background-color: #6fcf97;
   height: 48px;
   width: 48px;
   flex: none !important;
+}
+#parOfficeCal
+  button.react-calendar__tile--active.react-calendar__tile--active.react-calendar__month-view__days__day {
+  color: #003355;
+  border-color: #6fcf97;
+  background-color: #6fcf97;
 }
 #parOfficeCal .react-calendar__tile--active {
   background: #f8f8fa;
@@ -208,9 +215,6 @@
   height: 48px;
   width: 47px;
 }
-/* .react-calendar--selectRange .react-calendar__tile--hover {
-  background-color: #f8f8fa;
-} */
 #parOfficeCal .react-calendar__tile--range {
   background: #f8f8fa;
   color: #6fcf97;

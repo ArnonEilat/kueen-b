@@ -4,16 +4,14 @@
   justify-content: space-evenly;
   align-items: center;
 }
-
 .line {
   position: absolute;
   width: 1133px;
   height: 0px;
   left: 476px;
   top: 191px;
-  border: 0.25px solid #BEBEBE;
+  border: 0.25px solid #bebebe;
 }
-
 .topArea {
   position: absolute;
   width: 1699px;
@@ -22,17 +20,15 @@
   top: 0px;
   filter: drop-shadow(0px 4px 10px rgba(51, 51, 51, 0.12));
 }
-
 .desktopnav {
   position: absolute;
   height: 80px;
   left: 0px;
   right: -120px;
   top: 0px;
-  background: #FFFFFF;
-  border: 1px solid #F5F4F3;
+  background: #ffffff;
+  border: 1px solid #f5f4f3;
 }
-
 .header {
   position: absolute;
   width: 125.21px;
@@ -40,19 +36,17 @@
   left: 65px;
   top: 20px;
 }
-
 .Health {
   position: absolute;
   left: 43%;
   right: 82.07%;
   top: 23%;
   bottom: 1.86%;
-  color: #2B8FFF;
+  color: #2b8fff;
   font: caption;
   font-weight: bold;
   font-size: x-large;
 }
-
 .klogo {
   height: 50px;
   width: 50.999874114990234px;
@@ -64,7 +58,6 @@
   top: 0%;
   bottom: 0%;
 }
-
 .registeredArea {
   display: flex;
   flex-direction: column;
@@ -75,16 +68,14 @@
   background: white;
   border-radius: 4px;
 }
-
 .sidebar {
   position: absolute;
   width: 400px;
   height: 1600px;
   left: 0px;
   top: 80px;
-  background: #F5FAFF;
+  background: #f5faff;
 }
-
 #officeCal {
   display: flex;
   flex-direction: column;
@@ -93,12 +84,9 @@
   font-weight: bold;
   position: absolute;
   width: 400px;
-  /* height: 0px; */
   left: 0px;
-  /* top: 150px; */
   border-radius: 111px;
 }
-
 .switchingdays {
   position: absolute;
   width: 306.01px;
@@ -106,7 +94,6 @@
   left: 910px;
   top: 147px;
 }
-
 .nextArrow {
   position: absolute;
   right: 3%;
@@ -114,14 +101,12 @@
   bottom: 0%;
   transform: rotate(180deg);
 }
-
 .prevArrow {
   position: absolute;
   left: -40%;
   top: 0%;
   bottom: 0%;
 }
-
 .chosenDay {
   position: absolute;
   width: 120%;
@@ -133,35 +118,32 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 80%;
-  color: #00406B;
+  color: #00406b;
   text-align: center;
 }
-
 .registerdArea {
   position: absolute;
   width: 190px;
   height: 80px;
   left: 506px;
   top: 240px;
-  font-family: 'Arial';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
-  color: #00406B;
+  color: #00406b;
 }
-
-.amountregisterd {
-
+.numOfReg {
   position: absolute;
   width: 190px;
   height: 30px;
-  font-family: 'Arial';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
-  color: #00406B;
+  color: #00406b;
 }
 
 .list {
@@ -170,11 +152,10 @@
   height: 300px;
   left: 504px;
   top: 301px;
-  font-family: 'Roboto';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
-  color: #00406B;
-
+  color: #00406b;
 }
