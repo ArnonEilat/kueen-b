@@ -3,13 +3,14 @@ import "../components/calendarElement.js";
 import MyCalendar from "../components/calendarElement.js";
 import "./OfficeManagerScreen.css";
 import K_Health_logo from "../Icons/logoK.svg";
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import leftArrow from "../Icons/leftArrow.svg";
 import rightArrow from "../Icons/rightArrow.svg";
-import { useDispatch, useStore } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectDate, selectedDate } from "../redux/dateSlice.js";
+import { dbURL } from "../consts.js";
 
 const WEEKDAY = [
   "Sunday",
@@ -35,7 +36,7 @@ const MONTH = [
   "December",
 ];
 const postReq = async (dateText) => {
-  const array = await axios.post("http://localhost:5000/dates/getPerDate", {
+  const array = await axios.post(dbURL, {
     date: dateText,
   });
   return array;

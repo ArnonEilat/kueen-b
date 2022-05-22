@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Calendar from "react-calendar";
 import "./calendarElement.css";
+import disableWeekends from "../functions";
+
 function MyCalendar(props) {
   const headerRender = () => null;
   return (
@@ -24,7 +26,7 @@ function MyCalendar(props) {
           //disable tile on weekend
           tileDisabled={({ activeStartDate, date, view }) => {
             const day = date.getDay();
-            return day === 6 || day === 5;
+            return disableWeekends(day);
           }}
         />
       </div>

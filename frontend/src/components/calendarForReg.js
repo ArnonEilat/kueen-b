@@ -4,6 +4,7 @@ import "./calendarForReg.css";
 import { useDispatch, useStore } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
 import axios from "axios";
+import disableWeekends from "../functions";
 
 const postReq = async (dateText) => {
   const array = await axios.post("http://localhost:5000/dates/getPerDate", {
@@ -49,7 +50,7 @@ function MyCalendar1() {
           }}
           tileDisabled={({ activeStartDate, date, view }) => {
             const day = date.getDay();
-            return day === 6 || day === 5;
+            return disableWeekends(day);
           }}
         />
       </div>
