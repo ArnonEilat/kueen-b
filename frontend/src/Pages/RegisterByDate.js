@@ -16,14 +16,17 @@ function RegisterByDate() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const postReq = async (dateText) => {
-    const array = await axios.post("http://localhost:5000/dates/getPerDate", {
-      date: dateText,
-    });
+    const array = await axios.post(
+      process.env.REACT_APP_SERVER_URL + "/dates/getPerDate",
+      {
+        date: dateText,
+      }
+    );
     return array;
   };
   const assignDate = async () => {
     await axios
-      .post("http://localhost:5000/dates/add", {
+      .post(process.env.REACT_APP_SERVER_URL + "/dates/add", {
         user: userInstance.id,
         date: dateInstance.dateText,
       })
