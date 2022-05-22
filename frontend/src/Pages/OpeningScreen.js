@@ -25,13 +25,13 @@ function OpeningScreen() {
     //   .then((res) => setID(res))
     //   .catch((res) => setData(res.line));
     console.log("hello");
-    axios.post('http://localhost:5000/users/add',{name: name, email: email})
+    axios.post('http://localhost:5000/users/login',{name: name, email: email})
     .then(a=> { 
       dispatch(
         login({
           name: name,
           mail: email,
-          id: a.data
+          id: a.id
         })
        );
       return navigate("/RegisterByDate");
