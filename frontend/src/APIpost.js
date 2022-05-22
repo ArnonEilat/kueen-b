@@ -1,7 +1,7 @@
 //POST method implementation:
 const postData =async (path, data = {})=> {
     // Default options are marked with *
-    const response = await fetch(path, {
+    const response = await fetch(process.env.REACT_APP_SERVER_URL +path, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
