@@ -1,1 +1,1 @@
-export const dbURL = "http://localhost:5000/dates/getPerDate";
+export const dbURL = process.env.REACT_APP_SERVER_URL + "/dates/getPerDate";

@@ -7,9 +7,12 @@ import axios from "axios";
 import disableWeekends from "../functions";
 
 const postReq = async (dateText) => {
-  const array = await axios.post("http://localhost:5000/dates/getPerDate", {
-    date: dateText,
-  });
+  const array = await axios.post(
+    process.env.REACT_APP_SERVER_URL + "/dates/getPerDate",
+    {
+      date: dateText,
+    }
+  );
   return array;
 };
 function MyCalendar1() {
@@ -48,6 +51,7 @@ function MyCalendar1() {
           formatShortWeekday={(locale, date) => {
             return date.toLocaleDateString("en-us", { weekday: "short" });
           }}
+          // disable tile on weekend
           tileDisabled={({ activeStartDate, date, view }) => {
             const day = date.getDay();
             return disableWeekends(day);

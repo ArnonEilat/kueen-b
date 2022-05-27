@@ -6,7 +6,7 @@ import getData from "../APIcall";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 function OpeningScreen() {
   const dispatch = useDispatch();
@@ -14,33 +14,24 @@ function OpeningScreen() {
   const [email, setEmail] = useState("");
   const [data, setData] = useState(null);
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (data === "Ok") {
-  //     return navigate("/RegisterByDate");
-  //   }
-  // }, [data]);
   const assignUser = (res) => {
-    //post request to register user to DB:
-    // postData('/add', {name: "abc" ,mail: "email"})
-    //   .then((res) => setID(res))
-    //   .catch((res) => setData(res.line));
-    console.log("hello");
-    axios.post(process.env.REACT_APP_SERVER_URL + "/users/add", { name: name, email: email })
-      .then(a => {
+    axios
+      .post(process.env.REACT_APP_SERVER_URL + "/users/add", {
+        name: name,
+        email: email,
+      })
+      .then((a) => {
         dispatch(
           login({
             name: name,
             mail: email,
-            id: a.data
+            id: a.data,
           })
         );
         return navigate("/RegisterByDate");
       });
 
     //set Data-change response line in order to move the next page
-
-
-  };
   const regBtn = () => {
     getData(`/nameValidation?name=${name}`)
       .then(
