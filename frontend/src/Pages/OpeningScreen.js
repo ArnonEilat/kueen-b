@@ -25,11 +25,12 @@ function OpeningScreen() {
           login({
             name: name,
             mail: email,
-            id: a.data,
+            id: a.data
           })
         );
         return navigate("/RegisterByDate");
       });
+  };
 
     //set Data-change response line in order to move the next page
   const regBtn = () => {
