@@ -25,21 +25,24 @@ function OpeningScreen() {
           login({
             name: name,
             mail: email,
-            id: a.data,
+            id: a.data
           })
         );
         return navigate("/RegisterByDate");
       });
+  };
 
     //set Data-change response line in order to move the next page
-  };
   const regBtn = () => {
-    console.log("regBtn");
-    //get request in order to check mail validation:
-    getData(`/validation?email=${email}`)
-      //if we get id->dispatch:
-      .then((res) => assignUser(res))
-      //else- error/ call func again :
+    getData(`/nameValidation?name=${name}`)
+      .then(
+        //get request in order to check mail validation:
+        getData(`/validation?email=${email}`)
+          //if we get id->dispatch:
+          .then((res) => assignUser(res))
+          //else- error/ call func again :
+          .catch((res) => setData(res.line))
+      )
       .catch((res) => setData(res.line));
   };
   return (
