@@ -66,7 +66,7 @@ app.get("/validation", (req, res) => {
 app.get("/nameValidation", (req, res) => {
   let name = req.query.name;
   console.log(name);
-  if (name != "") {
+  if (name !== "") {
     console.log("great name");
     res.send({ line: "Ok" });
   } else {
