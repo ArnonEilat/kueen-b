@@ -13,10 +13,11 @@ router.route('/add').post((req, res) => {
     const newUser = new User({
         username,
         mail
-    });
+    })
 
     newUser.save()
         .then(() => res.json(newUser._id))
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;

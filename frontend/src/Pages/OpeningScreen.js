@@ -19,36 +19,38 @@ function OpeningScreen() {
   //     return navigate("/RegisterByDate");
   //   }
   // }, [data]);
-  const assignUser =  (res) => {
+  const assignUser = (res) => {
     //post request to register user to DB:
     // postData('/add', {name: "abc" ,mail: "email"})
     //   .then((res) => setID(res))
     //   .catch((res) => setData(res.line));
     console.log("hello");
-    axios.post('http://localhost:5000/users/add',{name: name, email: email})
-    .then(a=> { 
-      dispatch(
-        login({
-          name: name,
-          mail: email,
-          id: a.data
-        })
-       );
-      return navigate("/RegisterByDate");
-    });
+    axios.post('http://localhost:5000/users/add', { name: name, email: email })
+      .then(a => {
+        dispatch(
+          login({
+            name: name,
+            mail: email,
+            id: a.data
+          })
+        );
+        return navigate("/RegisterByDate");
+      });
 
     //set Data-change response line in order to move the next page
-    
-    
+
+
   };
   const regBtn = () => {
-
-    console.log("regBtn");
-    //get request in order to check mail validation:
-   getData(`/validation?email=${email}`)
-      //if we get id->dispatch:
-      .then((res) => assignUser(res))
-      //else- error/ call func again :
+    getData(`/nameValidation?name=${name}`)
+      .then(
+        //get request in order to check mail validation:
+        getData(`/validation?email=${email}`)
+          //if we get id->dispatch:
+          .then((res) => assignUser(res))
+          //else- error/ call func again :
+          .catch((res) => setData(res.line))
+      )
       .catch((res) => setData(res.line));
   };
   return (
