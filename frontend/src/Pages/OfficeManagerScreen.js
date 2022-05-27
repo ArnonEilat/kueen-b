@@ -12,6 +12,8 @@ import { selectDate } from "../redux/dateSlice.js";
 
 function OfficeManagerScreen() {
   const [date, setDate] = useState(new Date());
+  const dateText = date.toDateString();
+  const dispatch = useDispatch();
   const dateInstance = useSelector(selectDate);
   const userslist = dateInstance.usersList;
 
@@ -37,14 +39,25 @@ function OfficeManagerScreen() {
       <div className="line"></div>
       <div className="registeredArea">
         <div className="switchingdays">
-
-          <img src={leftArrow} onClick={() => {
-            const day = date.getDate()
-            const newDate = new Date(date)
-            newDate.setDate(day - 1)
-            setDate(newDate)
-          }} className="prevArrow" />
-
+          <img
+            src={leftArrow}
+            onClick={() => {
+              const day = date.getDay();
+              const dayOnMonth = date.getDate();
+              const newDate = new Date(date);
+              // to skip weekends by arrows
+              if (day - 1 === -1) {
+                //0=sunday
+                //go to thursday:
+                newDate.setDate(dayOnMonth - 3);
+                setDate(newDate);
+              } else {
+                newDate.setDate(dayOnMonth - 1);
+                setDate(newDate);
+              }
+            }}
+            className="prevArrow"
+          />
           <div className="chosenDay">
             {dateInstance.dateText}
           </div>

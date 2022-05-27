@@ -15,7 +15,7 @@ const userPromiseFunc = (_id) => {
             if (err) {
                 return reject(err)
             }
-            resolve(result2[0].username)
+            resolve(result2[0].username)//למה במקום האפס?
         });
     })
 }
@@ -36,7 +36,7 @@ router.route('/getPerDate').post((req, res) => {
                 userPromiseArray.push(usrPromise)
 
             });
-            const users = await Promise.all(userPromiseArray)
+            const users = await Promise.all(userPromiseArray)//???????????
             console.log(users, "this is the whole namesusersarrsay");
             res.send(users);
         }
