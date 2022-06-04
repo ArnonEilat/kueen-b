@@ -1,57 +1,58 @@
 import React, { useState } from "react";
-import "./OpeningScreen.css";
+import "./Signup.css";
 import K_Health_logo from "../Icons/logoK.svg";
 import img_button from "../Icons/calanderIcon.svg";
 import getData from "../APIcall";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "axios";import Arrow from "../Icons/Arrow.svg";
+import { Link } from "react-router-dom";
 
-function OpeningScreen() {
+function Signup() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
   const [data, setData] = useState(null);
   const navigate = useNavigate();
-  const assignUser = (res) => {
+  const regBtn = () => {
+    console.log("reg");
     axios
-      .post(process.env.REACT_APP_SERVER_URL + "/users/add", {
+      .post(process.env.REACT_APP_SERVER_URL + "/users/add", {   
         name: name,
         email: email,
+        password:password
       })
       .then((a) => {
         dispatch(
           login({
             name: name,
             mail: email,
+            password:password,
             id: a.data,
           })
         );
         return navigate("/RegisterByDate");
-      });
+      }).catch((error) =>{setData(error.response.data.line)});
 
     //set Data-change response line in order to move the next page
   };
-  const regBtn = () => {
-    console.log("regBtn");
-    //get request in order to check mail validation:
-    getData(`/validation?email=${email}`)
-      //if we get id->dispatch:
-      .then((res) => assignUser(res))
-      //else- error/ call func again :
-      .catch((res) => setData(res.line));
-  };
   return (
-    <div className="OpeningScreen">
-      <img src={K_Health_logo} className="logo" />
-      <p className="head">Office registration form</p>
+    <div className="Signup">
+      <div className="upperArea">
+        <Link to="/Login">
+          <img src={Arrow} className="Arrow" />
+        </Link>
+        <h1 className="headline">Sign up</h1>
+      </div>
       <div className="loginArea">
+        <p className="secondHead">Sign up for office registration</p>
         <input
           onChange={(n) => setName(n.target.value)}
           className="nameInput"
           type="text"
-          placeholder="Your Name"
+          placeholder="Name"
         />
         <input
           onChange={(e) => setEmail(e.target.value)}
@@ -59,16 +60,15 @@ function OpeningScreen() {
           type="email"
           placeholder="Email"
         />
-        <button onClick={regBtn} className="registerButton">
-          {" "}
-          <img src={img_button} className="imgButton" />
-          <p className="textButton">
-            Register to a day<br></br> in the Office
-          </p>
-        </button>
-      </div>{" "}
-      <p className="error">{data}</p>
-    </div>
+        <input
+          onChange={(e) => setPassword(e.target.value)}
+          className="passwordInput"
+          type="text"
+          placeholder="Password"
+        />
+     
+    </div><button onClick={regBtn} className="submit">submit</button>
+      <p className="error">{data}</p></div>
   );
 }
-export default OpeningScreen;
+export default Signup;

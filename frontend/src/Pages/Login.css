@@ -1,0 +1,148 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Arial";
+    text-align: center;
+  }
+  .upperArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left:8%;
+  margin-right:5%;
+  width: 100%;
+  padding: 5%;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.12);
+}
+.headline {
+  display: flex;
+  align-self: baseline;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  margin-right: 26%;
+  color: #00406b;
+}
+.Arrow {
+  display: flex;
+  align-self: flex-start;
+}
+.Arrow:active {
+  display: flex;
+  align-self: flex-start;
+  box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
+}
+
+  .logo {
+    margin-top:10%;
+    display: flex;
+    width: 35vw;
+    height: 35vw;
+  }
+  .head {
+    margin:15%;
+    display: flex;
+    color: #1e90ff;
+    font-size: 6vw;
+    font-weight: bold;
+  }
+  .loginArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nameInput {
+    margin-top:25%;
+    display: flex;
+    border: none;
+    border-bottom: 0.6vw solid darkgray;
+    font-size: 4vw;
+  }
+  .passwordInput{
+    margin-top:35%;
+    display: flex;
+    border: none;
+    border-bottom: 0.6vw solid darkgray;
+    font-size: 4vw;
+  }
+  .passwordInput:focus{
+    border: none;
+    border-bottom: 0.6vw solid darkgray;
+    outline: none;
+  }
+  .emailInput {
+    margin-top:35%;
+    display: flex;
+    border: none;
+    border-bottom: 0.6vw solid darkgray;
+    font-size: 4vw;
+  }
+  .nameInput:focus {
+    border: none;
+    border-bottom: 0.6vw solid darkgray;
+    outline: none;
+  }
+  .emailInput:focus {
+    border: none;
+    border-bottom: 0.6vw solid darkgray;
+    outline: none;
+  }
+  .registerButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 30px;
+    gap: 10px;
+    width: 155px;
+    height: 40px;
+    bottom:100px;
+    
+    
+    /* General / Action */
+    
+    background: #2B8FFF;
+    /* button shadow */
+    
+    box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
+    border-radius: 20px;
+  }
+  .registerButton:active {
+    background-color: #cde4fd;
+    box-shadow: none;
+  }
+  .registerButton:focus {
+    background-color: white;
+  }
+  .registerButton:hover {
+    background-color: #cde4fd;
+  }
+  .imgButton {
+    display: flex;
+    align-self:center;
+    outline: none;
+    width:15vw;
+    height: 15vw;
+    margin-top:15%;
+  }
+  .textButton {
+    display: flex;
+    color: rgb(61, 61, 61);
+    font-size: 4.5vw;
+    font-weight: bold;
+    margin-top:20%;
+  }
+  .error{
+    display: flex;
+    font-weight: bold;
+    color:red;
+    margin-top:25%;
+  }
+  
+  

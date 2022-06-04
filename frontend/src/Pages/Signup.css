@@ -1,4 +1,4 @@
-.OpeningScreen {
+.Signup {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -6,6 +6,48 @@
   font-family: "Arial";
   text-align: center;
 }
+.upperArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left:8%;
+  margin-right:5%;
+  width: 100%;
+  padding: 5%;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.12);
+}
+.headline {
+  display: flex;
+  align-self: baseline;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  color: #00406b;
+}
+.secondHead{
+  display: flex;
+  align-self: baseline;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  color: #00406b;
+}
+.Arrow {
+  display: flex;
+  align-self: flex-start;
+}
+.Arrow:active {
+  display: flex;
+  align-self: flex-start;
+  box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
+}
+
 .logo {
   margin-top:10%;
   display: flex;
@@ -23,6 +65,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 }
 .nameInput {
   margin-top:25%;
@@ -31,9 +74,20 @@
   border-bottom: 0.6vw solid darkgray;
   font-size: 4vw;
 }
+.passwordInput{
+  margin-top:35%;
+  display: flex;
+  border: none;
+  border-bottom: 0.6vw solid darkgray;
+  font-size: 4vw;
+}
+.passwordInput:focus{
+  border: none;
+  border-bottom: 0.6vw solid darkgray;
+  outline: none;
+}
 .emailInput {
   margin-top:35%;
-  
   display: flex;
   border: none;
   border-bottom: 0.6vw solid darkgray;
@@ -49,18 +103,27 @@
   border-bottom: 0.6vw solid darkgray;
   outline: none;
 }
-.registerButton {
-  margin-top:48%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border: none;
-  width: 45vw;
-  height: 45vw;
-  box-shadow: 0px 0.8vw 1.5vw gray;
-  border-radius: 1.5vw;
+.submit{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 9px 30px;
+gap: 10px;
+width: 155px;
+height: 40px;
+bottom:100px;
+
+
+/* General / Action */
+
+background: #2B8FFF;
+/* button shadow */
+
+box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
+border-radius: 20px;
 }
+
 .registerButton:active {
   background-color: #cde4fd;
   box-shadow: none;
