@@ -15,45 +15,44 @@ function emailRegex(input) {
 router.route("/login").post((req, res) => {
   const mail = req.body.email;
   const password = req.body.password;
-  User.find({ mail: mail},async(err, result) => {
+  User.find({ mail: mail }, async (err, result) => {
     if (err) {
-      console.log(err);
-      return res.status(400).json({line:'email is wrong.Please try again'});
-    }console.log("userfound");
-      if(result[0].password===password){
-        console.log(result[0].password);
-        console.log(result[0].id);
-        res.json(result[0].id);
-      }
-      else{
-        console.log("wrongpass");
-        console.log(result[0].password);
-       res.status(400).json({line:'password is wrong.please try again.'});
-      }})
-    
-         
+      return res.status(500);
+    }
+    console.log(result);
+    if (result.length === 0) {
+      return res.status(400).json({ line: "Email is wrong. Please try again" });
+    }
+    if (result[0].password === password) {
+      res.json(result[0].id);
+    } else {
+      res.status(400).json({ line: "Password is wrong. please try again." });
+    }
+  });
 });
 router.route("/add").post((req, res) => {
   const username = req.body.name;
   const mail = req.body.email;
   const password = req.body.password;
   if (emailRegex(mail) && password.length >= 8 && username.length >= 2) {
-    console.log("great");
     const newUser = new User({
       username,
       mail,
-      password
+      password,
     });
-    newUser.save().then(() => res.json(newUser._id)).catch(err => res.status(400).json('Error: ' + err));
+    newUser
+      .save()
+      .then(() => res.json(newUser._id))
+      .catch((err) => res.status(400).json("Error: " + err));
   } else if (!emailRegex(mail)) {
-    console.log("rrrr");
-    res.status(400).json({line:'Invalid Email. Please try again'});   
+    res.status(400).json({ line: "Invalid Email. Please try again" });
   } else if (username.length < 2) {
-    res.status(400).json({line:'User name is too short. Please try again.'});
-    console.log("rrr2");
+    res.status(400).json({ line: "User name is too short. Please try again." });
   } else if (password.length < 8) {
     console.log("rrr3");
-    res.status(400).json({line:'Password is too short. Please try again.'});
+    res
+      .status(400)
+      .json({ line: "Password is shorter than 8 chras. Please try again." });
   }
 });
 

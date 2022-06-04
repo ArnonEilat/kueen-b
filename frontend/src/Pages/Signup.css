@@ -11,8 +11,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left:8%;
-  margin-right:5%;
+  margin-left: 8%;
+  margin-right: 5%;
   width: 100%;
   padding: 5%;
   background: #ffffff;
@@ -28,7 +28,7 @@
   line-height: 120%;
   color: #00406b;
 }
-.secondHead{
+.secondHead {
   display: flex;
   align-self: baseline;
   font-family: "Arial";
@@ -49,13 +49,13 @@
 }
 
 .logo {
-  margin-top:10%;
+  margin-top: 10%;
   display: flex;
   width: 35vw;
   height: 35vw;
 }
 .head {
-  margin:15%;
+  margin: 15%;
   display: flex;
   color: #1e90ff;
   font-size: 6vw;
@@ -68,26 +68,26 @@
   margin-bottom: 50px;
 }
 .nameInput {
-  margin-top:25%;
+  margin-top: 25%;
   display: flex;
   border: none;
   border-bottom: 0.6vw solid darkgray;
   font-size: 4vw;
 }
-.passwordInput{
-  margin-top:35%;
+.passwordInput {
+  margin-top: 35%;
   display: flex;
   border: none;
   border-bottom: 0.6vw solid darkgray;
   font-size: 4vw;
 }
-.passwordInput:focus{
+.passwordInput:focus {
   border: none;
   border-bottom: 0.6vw solid darkgray;
   outline: none;
 }
 .emailInput {
-  margin-top:35%;
+  margin-top: 35%;
   display: flex;
   border: none;
   border-bottom: 0.6vw solid darkgray;
@@ -103,55 +103,41 @@
   border-bottom: 0.6vw solid darkgray;
   outline: none;
 }
-.submit{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 9px 30px;
-gap: 10px;
-width: 155px;
-height: 40px;
-bottom:100px;
-
-
-/* General / Action */
-
-background: #2B8FFF;
-/* button shadow */
-
-box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
-border-radius: 20px;
+.submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 30px;
+  gap: 10px;
+  width: 155px;
+  height: 40px;
+  bottom: 100px;
+  background: #2b8fff;
+  box-shadow: 0px 1px 4px rgba(51, 51, 51, 0.25);
+  border-radius: 20px;
 }
 
-.registerButton:active {
+.submit:active {
   background-color: #cde4fd;
   box-shadow: none;
 }
-.registerButton:focus {
+.submit:focus {
   background-color: white;
 }
-.registerButton:hover {
+.submit:hover {
   background-color: #cde4fd;
-}
-.imgButton {
-  display: flex;
-  align-self:center;
-  outline: none;
-  width:15vw;
-  height: 15vw;
-  margin-top:15%;
 }
 .textButton {
   display: flex;
   color: rgb(61, 61, 61);
   font-size: 4.5vw;
   font-weight: bold;
-  margin-top:20%;
+  margin-top: 20%;
 }
-.error{
+.error {
   display: flex;
   font-weight: bold;
-  color:red;
-  margin-top:10%;
+  color: red;
+  margin-top: 10%;
 }
