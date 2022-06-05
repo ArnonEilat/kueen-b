@@ -26,7 +26,7 @@ router.route('/getPerDate').post((req, res) => {
 
     Dates.find({ date: currentDate }, async (err, result) => {
         if (err) {
-            return res.status(500).send(err);
+            return res.status(400).send(err);
         } else {
             const userPromiseArray = [];
 

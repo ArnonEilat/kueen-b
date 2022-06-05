@@ -46,7 +46,7 @@ function RegisterByDate() {
   return (
     <div className="RegisterByDate">
       <div className="upperArea">
-        <Link to="/OpeningScreen">
+        <Link to="/Login">
           <img src={Arrow} className="Arrow" />
         </Link>
         <h1 className="headline">When are you coming?</h1>
