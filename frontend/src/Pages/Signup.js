@@ -38,11 +38,11 @@ function Signup() {
   };
   return (
     <div className="Signup">
-      <div className="upperArea">
+      <div className="upperArea2">
         <Link to="/Login">
-          <img src={Arrow} className="Arrow" />
+          <img src={Arrow} className="Arrow2" />
         </Link>
-        <h1 className="headline">Sign up</h1>
+        <h1 className="headline2">Sign up</h1>
       </div>
       <div className="loginArea">
         <p className="secondHead">Sign up for office registration</p>

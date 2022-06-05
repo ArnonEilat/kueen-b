@@ -52,7 +52,7 @@ router.route("/add").post((req, res) => {
     console.log("rrr3");
     res
       .status(400)
-      .json({ line: "Password is shorter than 8 chras. Please try again." });
+      .json({ line: "Password is shorter than 8 characters. Please try again." });
   }
 });
 
