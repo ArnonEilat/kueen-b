@@ -47,7 +47,7 @@ function Signup() {
       <div className="loginArea">
         <p className="secondHead">Sign up for office registration</p>
         <input
-          onChange={(n) => setName(n.target.value)}
+          onChange={(e) => setName(e.target.value)}
           className="nameInput"
           type="text"
           placeholder="Name"
