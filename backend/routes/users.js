@@ -8,7 +8,7 @@ router.route("/").get((req, res) => {
 });
 
 function emailRegex(input) {
-  let regex = /[a-zA-Z]+@khealth\.com/i;
+  const regex = /[a-zA-Z]+@khealth\.com/i;
   return regex.test(input);
 }
 
