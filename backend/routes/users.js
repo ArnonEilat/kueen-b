@@ -26,7 +26,7 @@ router.route("/login").post((req, res) => {
     if (result[0].password === password) {
       res.json(result[0].id);
     } else {
-      res.status(400).json({ line: "Password is wrong. please try again." });
+      return res.status(400).json({ line: "Password is wrong. please try again." });
     }
   });
 });
@@ -45,12 +45,11 @@ router.route("/add").post((req, res) => {
       .then(() => res.json(newUser._id))
       .catch((err) => res.status(400).json("Error: " + err));
   } else if (!emailRegex(mail)) {
-    res.status(400).json({ line: "Invalid Email. Please try again" });
+    return res.status(400).json({ line: "Invalid Email. Please try again" });
   } else if (username.length < 2) {
-    res.status(400).json({ line: "User name is too short. Please try again." });
+    return res.status(400).json({ line: "User name is too short. Please try again." });
   } else if (password.length < 8) {
-    console.log("rrr3");
-    res
+    return res
       .status(400)
       .json({ line: "Password is shorter than 8 characters. Please try again." });
   }
