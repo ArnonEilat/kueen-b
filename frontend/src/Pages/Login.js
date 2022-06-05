@@ -38,7 +38,7 @@ function Login() {
   return (
     <div className="Login">
       <img src={K_Health_logo} className="logo" />
-      <p className="head">Office registration form</p>
+      <p className="head">Office registration</p>
       <div className="loginArea">
         <input
           onChange={(e) => setEmail(e.target.value)}
@@ -58,7 +58,7 @@ function Login() {
       </button>
       <p className="error">{data}</p>
       <p className="dont">
-        dont have an acount?<Link to="/Signup">sign up</Link>
+        Don't have an acount? <Link to="/Signup">sign up</Link>
       </p>
     </div>
   );
