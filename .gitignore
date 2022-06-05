@@ -1,4 +1,4 @@
 #ignore folder name node_modules:
 node_modules/
 .vs/
-
+.env

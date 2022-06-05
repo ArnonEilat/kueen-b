@@ -62,6 +62,18 @@ app.get("/validation", (req, res) => {
   }
 });
 
+app.get("/nameValidation", (req, res) => {
+  let name = req.query.name;
+  console.log(name);
+  if (name !== "") {
+    console.log("great name");
+    res.send({ line: "Ok" });
+  } else {
+    res.status(400);
+    res.send({ line: "Please enter your name." });
+  }
+});
+
 app.post("/assignToDate", (req, res) => {
   let user = req.query.user;
   let date = req.query.date;
