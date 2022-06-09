@@ -4,11 +4,12 @@ import "./calendarForReg.css";
 import { useDispatch, useStore } from "react-redux";
 import { selectedDate } from "../redux/dateSlice";
 import axios from "axios";
-import disableWeekends from "../functions";
+import disableWeekends from "../disableweekfunc";
+import changeURL from "../urlChangefunc";
 
 const postReq = async (dateText) => {
-  const array = await axios.post(
-    process.env.REACT_APP_SERVER_URL + "/dates/getPerDate",
+  let API_URL=changeURL();
+  const array = await axios.post(API_URL+"/dates/getPerDate",
     {
       date: dateText,
     }

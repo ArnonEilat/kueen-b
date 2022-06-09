@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Arrow from "../Icons/Arrow.svg";
 import { Link } from "react-router-dom";
+import changeURL from "../urlChangefunc";
 
 function Signup() {
   const dispatch = useDispatch();
@@ -15,8 +16,9 @@ function Signup() {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
   const regBtn = () => {
+    let API_URL=changeURL();
     axios
-      .post(process.env.REACT_APP_SERVER_URL + "/users/add", {
+      .post(API_URL + "/users/add", {
         name: name,
         email: email,
         password: password,
