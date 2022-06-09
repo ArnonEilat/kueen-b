@@ -15,8 +15,14 @@ function Login() {
   const navigate = useNavigate();
 
   const login = () => {
+
+    let API_URL = "https://attend-k-back.herokuapp.com";
+    if (process && process.env && process.env.REACT_APP_API_URL) {
+      API_URL = process?.env?.REACT_APP_API_URL;
+    }
+
     axios
-      .post(process.env.REACT_APP_SERVER_URL + "/users/login", {
+      .post(API_URL + "/users/login", {
         email: email,
         password: password,
       })
