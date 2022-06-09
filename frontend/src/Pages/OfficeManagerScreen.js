@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectDate, selectedDate } from "../redux/dateSlice.js";
-import { dbURL } from "../consts.js";
+import changeURL from "../urlChangefunc";
 
 const WEEKDAY = [
   "Sunday",
@@ -35,8 +35,10 @@ const MONTH = [
   "November",
   "December",
 ];
+let API_URL=changeURL();
 const postReq = async (dateText) => {
-  const array = await axios.post(dbURL, {
+
+  const array = await axios.post(API_URL+"/dates/getPerDate", {
     date: dateText,
   });
   return array;
