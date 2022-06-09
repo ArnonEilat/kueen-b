@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "react-calendar";
 import "./calendarElement.css";
-import disableWeekends from "../functions";
+import disableWeekends from "../disableweekfunc";
 
 function MyCalendar(props) {
   const headerRender = () => null;

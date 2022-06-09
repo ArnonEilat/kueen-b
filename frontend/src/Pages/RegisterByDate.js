@@ -9,15 +9,18 @@ import { useDispatch, useStore } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MyCalendar1 from "../components/calendarForReg.js";
 import axios from "axios";
+import changeURL from "../urlChangefunc";
 
 function RegisterByDate() {
   const userInstance = useSelector(selectUser);
   const dateInstance = useSelector(selectDate);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let API_URL=changeURL();
   const postReq = async (dateText) => {
+    
     const array = await axios.post(
-      process.env.REACT_APP_SERVER_URL + "/dates/getPerDate",
+     API_URL+ "/dates/getPerDate",
       {
         date: dateText,
       }
@@ -26,7 +29,7 @@ function RegisterByDate() {
   };
   const assignDate = async () => {
     await axios
-      .post(process.env.REACT_APP_SERVER_URL + "/dates/add", {
+      .post(API_URL+"/dates/add", {
         user: userInstance.id,
         date: dateInstance.dateText,
       })

@@ -6,6 +6,7 @@ import { userDetails } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import changeURL from "../urlChangefunc";
 
 function Login() {
   const dispatch = useDispatch();
@@ -16,10 +17,7 @@ function Login() {
 
   const login = () => {
 
-    let API_URL = "https://attend-k-back.herokuapp.com";
-    if (process && process.env && process.env.REACT_APP_API_URL) {
-      API_URL = process?.env?.REACT_APP_API_URL;
-    }
+    let API_URL=changeURL();
 
     axios
       .post(API_URL + "/users/login", {
